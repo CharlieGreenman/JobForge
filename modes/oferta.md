@@ -22,7 +22,7 @@ Tabla con:
 
 ## Bloque B — Match con CV
 
-Lee `cv.md`. Crea tabla con cada requisito del JD mapeado a líneas exactas del CV o keys de i18n.ts.
+Lee `cv.md`. Crea tabla con cada requisito del JD mapeado a líneas exactas del CV.
 
 **Adaptado al arquetipo:**
 - Si FDE → priorizar proof points de delivery rápida y client-facing

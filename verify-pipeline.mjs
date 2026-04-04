@@ -18,10 +18,15 @@ import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
 const CAREER_OPS = new URL('.', import.meta.url).pathname;
-const APPS_FILE = join(CAREER_OPS, 'applications.md');
+// Support both layouts: data/applications.md (boilerplate) and applications.md (original)
+const APPS_FILE = existsSync(join(CAREER_OPS, 'data/applications.md'))
+  ? join(CAREER_OPS, 'data/applications.md')
+  : join(CAREER_OPS, 'applications.md');
 const ADDITIONS_DIR = join(CAREER_OPS, 'batch/tracker-additions');
 const REPORTS_DIR = join(CAREER_OPS, 'reports');
-const STATES_FILE = join(CAREER_OPS, 'states.yml');
+const STATES_FILE = existsSync(join(CAREER_OPS, 'templates/states.yml'))
+  ? join(CAREER_OPS, 'templates/states.yml')
+  : join(CAREER_OPS, 'states.yml');
 
 const CANONICAL_STATUSES = [
   'evaluada', 'aplicado', 'respondido', 'entrevista',
