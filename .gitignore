@@ -1,0 +1,29 @@
+# Personal data (user fills these)
+data/applications.md
+data/pipeline.md
+data/scan-history.tsv
+reports/*.md
+output/
+batch/logs/
+batch/batch-state.tsv
+batch/batch-input.tsv
+batch/tracker-additions/*.tsv
+jds/
+
+# User config
+config/profile.yml
+portals.yml
+
+# Generated
+.resolved-prompt-*
+node_modules/
+
+# OS
+.DS_Store
+*.mov
+*.mp4
+
+# Claude Code local
+.claude/settings.local.json
+.claude/memory/
+career-dashboard

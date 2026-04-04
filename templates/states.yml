@@ -1,0 +1,51 @@
+# Career-Ops — Estados canónicos
+# Fuente de verdad para career-ops (writer) y dashboard-v2 (reader).
+# Ambos sistemas DEBEN usar estos estados exactos.
+#
+# Regla: El campo status en applications.md debe contener EXACTAMENTE
+# uno de estos valores (case-insensitive). Sin markdown bold (**),
+# sin fechas, sin texto adicional. La fecha va en la columna de fecha.
+
+states:
+  - id: evaluada
+    label: Evaluada
+    description: Oferta evaluada con report, pendiente de decisión
+    dashboard_group: evaluada
+
+  - id: aplicado
+    label: Aplicado
+    aliases: [enviada, aplicada, applied, sent]
+    description: Aplicación enviada
+    dashboard_group: aplicado
+
+  - id: respondido
+    label: Respondido
+    description: La empresa ha respondido (no entrevista aún)
+    dashboard_group: respondido
+
+  - id: entrevista
+    label: Entrevista
+    description: En proceso de entrevista activo
+    dashboard_group: entrevista
+
+  - id: oferta
+    label: Oferta
+    description: Oferta recibida
+    dashboard_group: oferta
+
+  - id: rechazado
+    label: Rechazado
+    description: Rechazado por la empresa
+    dashboard_group: rechazado
+
+  - id: descartado
+    label: Descartado
+    aliases: [cerrada, descartada]
+    description: Discarded by candidate or offer closed
+    dashboard_group: descartado
+
+  - id: no_aplicar
+    label: NO APLICAR
+    aliases: [no aplicar, skip, monitor]
+    description: No encaja, no aplicar
+    dashboard_group: no_aplicar

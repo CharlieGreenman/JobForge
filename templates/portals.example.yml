@@ -1,0 +1,152 @@
+# Portal Scanner Configuration
+# Used by /career-ops scan to discover new offers automatically.
+#
+# Strategy (3 levels):
+#   1. Playwright → careers_url of each company (real-time, reliable)
+#   2. Greenhouse API → structured JSON (fast, Greenhouse only)
+#   3. WebSearch with site: filters (broad discovery, may be stale)
+#
+# IMPORTANT: Each company in tracked_companies MUST have careers_url.
+
+# -- Title filter --
+# The scanner uses these keywords to decide if a title is relevant.
+# At least 1 positive must match AND 0 negatives must match (case-insensitive).
+
+title_filter:
+  positive:
+    # [CUSTOMIZE] Add keywords matching YOUR target roles
+    - "AI"
+    - "ML"
+    - "LLM"
+    - "Agent"
+    - "Agentic"
+    - "Automation"
+    - "Product Manager"
+    - "Solutions Architect"
+    - "Solutions Engineer"
+    - "Forward Deployed"
+    - "Platform Engineer"
+    - "LLMOps"
+    - "MLOps"
+    - "GenAI"
+    - "Generative AI"
+    - "NLP"
+    - "Voice AI"
+    - "Conversational AI"
+  negative:
+    # [CUSTOMIZE] Add keywords for roles you want to exclude
+    - "Junior"
+    - "Intern"
+    - ".NET"
+    - "Java "
+    - "iOS"
+    - "Android"
+    - "PHP"
+    - "Ruby"
+    - "Embedded"
+    - "Firmware"
+    - "Blockchain"
+    - "Web3"
+    - "Salesforce Admin"
+    - "SAP "
+    - "Mainframe"
+    - "COBOL"
+  seniority_boost:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Head"
+    - "Director"
+
+# -- Search queries --
+# Each query triggers a WebSearch. Use site: to filter by portal.
+
+search_queries:
+  - name: Ashby — AI Engineer
+    query: 'site:jobs.ashbyhq.com "AI Engineer" OR "LLM Engineer" OR "Forward Deployed" remote'
+    enabled: true
+
+  - name: Ashby — Solutions
+    query: 'site:jobs.ashbyhq.com "Solutions Architect" OR "Solutions Engineer" AI remote'
+    enabled: true
+
+  - name: Greenhouse — AI PM
+    query: 'site:boards.greenhouse.io "AI Product Manager" OR "ML Product Manager" remote'
+    enabled: true
+
+  - name: Greenhouse — AI Engineer
+    query: 'site:boards.greenhouse.io "AI Engineer" OR "ML Engineer" OR "Applied AI" remote'
+    enabled: true
+
+  - name: Lever — AI roles
+    query: 'site:jobs.lever.co "AI" OR "ML" OR "LLM" engineer OR architect remote'
+    enabled: true
+
+# -- Tracked companies --
+# Companies whose career pages are checked directly.
+# scan_method: playwright (default), greenhouse_api, ashby_api
+
+tracked_companies:
+  - name: Anthropic
+    careers_url: "https://www.anthropic.com/careers"
+    scan_method: greenhouse_api
+    greenhouse_id: anthropic
+    enabled: true
+    notes: "Claude maker. PM and engineering roles."
+
+  - name: OpenAI
+    careers_url: "https://openai.com/careers/search"
+    scan_method: playwright
+    enabled: true
+    notes: "GPT maker. Applied research and engineering."
+
+  - name: Google DeepMind
+    careers_url: "https://deepmind.google/about/careers/"
+    scan_method: playwright
+    enabled: true
+    notes: "AI research + applied AI."
+
+  - name: Stripe
+    careers_url: "https://stripe.com/jobs/search"
+    scan_method: playwright
+    enabled: true
+    notes: "Payments. AI/ML for fraud, revenue optimization."
+
+  - name: Vercel
+    careers_url: "https://vercel.com/careers"
+    scan_method: playwright
+    enabled: true
+    notes: "AI SDK, v0.dev. Frontend AI tooling."
+
+  - name: Datadog
+    careers_url: "https://careers.datadoghq.com/all-jobs/"
+    scan_method: greenhouse_api
+    greenhouse_id: datadog
+    enabled: true
+    notes: "Observability. AI/ML for monitoring."
+
+  - name: Mistral
+    careers_url: "https://mistral.ai/careers"
+    scan_method: playwright
+    enabled: true
+    notes: "European AI lab. Paris-based, some remote."
+
+  - name: Cohere
+    careers_url: "https://cohere.com/careers"
+    scan_method: playwright
+    enabled: true
+    notes: "Enterprise LLMs. FDE and solutions roles."
+
+  - name: Langfuse
+    careers_url: "https://langfuse.com/careers"
+    scan_method: playwright
+    enabled: true
+    notes: "LLMOps / observability. Small team."
+
+  - name: Airtable
+    careers_url: "https://airtable.com/careers"
+    scan_method: greenhouse_api
+    greenhouse_id: airtable
+    enabled: true
+    notes: "No-code + AI platform."
