@@ -748,14 +748,22 @@ func (m PipelineModel) renderHelp() string {
 				keyStyle.Render("Esc") + descStyle.Render(" cancelar"))
 	}
 
-	return style.Render(
-		keyStyle.Render("\u2191\u2193") + descStyle.Render(" nav  ") +
-			keyStyle.Render("\u2190\u2192") + descStyle.Render(" tabs  ") +
-			keyStyle.Render("s") + descStyle.Render(" sort  ") +
-			keyStyle.Render("Enter") + descStyle.Render(" report  ") +
-			keyStyle.Render("c") + descStyle.Render(" cambiar  ") +
-			keyStyle.Render("v") + descStyle.Render(" vista  ") +
-			keyStyle.Render("Esc") + descStyle.Render(" cerrar"))
+	brand := lipgloss.NewStyle().Foreground(m.theme.Overlay).Render("career-ops by santifer.io")
+
+	keys := keyStyle.Render("↑↓") + descStyle.Render(" nav  ") +
+		keyStyle.Render("←→") + descStyle.Render(" tabs  ") +
+		keyStyle.Render("s") + descStyle.Render(" sort  ") +
+		keyStyle.Render("Enter") + descStyle.Render(" report  ") +
+		keyStyle.Render("c") + descStyle.Render(" cambiar  ") +
+		keyStyle.Render("v") + descStyle.Render(" vista  ") +
+		keyStyle.Render("Esc") + descStyle.Render(" cerrar")
+
+	gap := m.width - lipgloss.Width(keys) - lipgloss.Width(brand) - 2
+	if gap < 1 {
+		gap = 1
+	}
+
+	return style.Render(keys + strings.Repeat(" ", gap) + brand)
 }
 
 func (m PipelineModel) overlayStatusPicker(body string) string {
