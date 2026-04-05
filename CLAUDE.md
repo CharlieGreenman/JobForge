@@ -1,5 +1,11 @@
 # Career-Ops -- AI Job Search Pipeline
 
+## Origin
+
+This system was built and used by [santifer](https://santifer.io) to evaluate 740+ job offers, generate 100+ tailored CVs, and land a Head of Applied AI role. The archetypes, scoring logic, negotiation scripts, and proof point structure all reflect his specific career search in AI/automation roles.
+
+**It will work out of the box, but it's designed to be made yours.** If the archetypes don't match your career, the modes are in the wrong language, or the scoring doesn't fit your priorities -- just ask. You (Claude) can edit any file in this system. The user says "change the archetypes to data engineering roles" and you do it. That's the whole point.
+
 ## What is career-ops
 
 AI-powered job search automation built on Claude Code: pipeline tracking, offer evaluation, CV generation, portal scanning, batch processing.
