@@ -19,11 +19,23 @@ AI-powered job search automation built on Claude Code: pipeline tracking, offer 
 
 ### Personalization
 
-**Fill `config/profile.yml` before using.** Copy from `config/profile.example.yml` and add your details: name, email, location, target roles, narrative, proof points, comp targets.
+This system is designed to be customized by YOU (Claude). When the user asks you to change archetypes, translate modes, adjust scoring, add companies, or modify negotiation scripts -- do it directly. You read the same files you use, so you know exactly what to edit.
 
-**Create `cv.md`** in the project root with your CV in markdown format.
+**Common customization requests:**
+- "Change the archetypes to [backend/frontend/data/devops] roles" → edit `modes/_shared.md`
+- "Translate the modes to English" → edit all files in `modes/`
+- "Add these companies to my portals" → edit `portals.yml`
+- "Update my profile" → edit `config/profile.yml`
+- "Change the CV template design" → edit `templates/cv-template.html`
+- "Adjust the scoring weights" → edit `modes/_shared.md` and `batch/batch-prompt.md`
 
-**(Optional) Create `article-digest.md`** with proof points from your portfolio articles/projects.
+**Setup files (fill before first use):**
+
+**`config/profile.yml`** -- Copy from `config/profile.example.yml` and add your details: name, email, location, target roles, narrative, proof points, comp targets.
+
+**`cv.md`** -- Create in project root with your CV in markdown format.
+
+**(Optional) `article-digest.md`** -- Proof points from portfolio articles/projects.
 
 **First evaluation:** If `data/applications.md` doesn't exist, create it with the tracker header before writing the first TSV:
 ```markdown
