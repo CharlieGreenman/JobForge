@@ -192,7 +192,13 @@ career-ops/
 
 ## Also Open Source
 
-- **[cv-santiago](https://github.com/santifer/cv-santiago)** -- The portfolio website (santifer.io) with AI chatbot, LLMOps dashboard, and case studies. Built with React 19, Claude API, Langfuse. If you need a portfolio to showcase alongside your job search, check it out.
+- **[cv-santiago](https://github.com/santifer/cv-santiago)** -- The portfolio website (santifer.io) with AI chatbot, LLMOps dashboard, and case studies. If you need a portfolio to showcase alongside your job search, fork it and make it yours.
+
+## About the Author
+
+I'm Santiago -- Head of Applied AI, former founder (built and sold a business that still runs with my name on it). I built career-ops to manage my own job search. It worked: I used it to land my current role.
+
+My portfolio and other open source projects → [santifer.io](https://santifer.io)
 
 ## License
 
