@@ -68,8 +68,8 @@ If `data/applications.md` doesn't exist, create it:
 ```markdown
 # Applications Tracker
 
-| # | Fecha | Empresa | Rol | Score | Estado | PDF | Report | Notas |
-|---|-------|---------|-----|-------|--------|-----|--------|-------|
+| # | Date | Company | Role | Score | Status | PDF | Report | Notes |
+|---|------|---------|------|-------|--------|-----|--------|-------|
 ```
 
 #### Step 5: Ready
@@ -157,7 +157,7 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 2. `date` -- YYYY-MM-DD
 3. `company` -- short company name
 4. `role` -- job title
-5. `status` -- canonical status (e.g., `Evaluada`)
+5. `status` -- canonical status (e.g., `Evaluated`)
 6. `score` -- format `X.X/5` (e.g., `4.2/5`)
 7. `pdf` -- `✅` or `❌`
 8. `report` -- markdown link `[num](reports/...)`
@@ -181,14 +181,14 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 
 | State | When to use |
 |-------|-------------|
-| `Evaluada` | Report completed, pending decision |
-| `Aplicado` | Application sent |
-| `Respondido` | Company responded |
-| `Entrevista` | In interview process |
-| `Oferta` | Offer received |
-| `Rechazado` | Rejected by company |
-| `Descartado` | Discarded by candidate or offer closed |
-| `NO APLICAR` | Doesn't fit, don't apply |
+| `Evaluated` | Report completed, pending decision |
+| `Applied` | Application sent |
+| `Responded` | Company responded |
+| `Interview` | In interview process |
+| `Offer` | Offer received |
+| `Rejected` | Rejected by company |
+| `Discarded` | Discarded by candidate or offer closed |
+| `SKIP` | Doesn't fit, don't apply |
 
 **RULES:**
 - No markdown bold (`**`) in status field

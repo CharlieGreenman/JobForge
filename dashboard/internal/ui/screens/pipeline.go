@@ -54,12 +54,12 @@ const (
 
 // Filter modes
 const (
-	filterAll        = "all"
-	filterEvaluada   = "evaluada"
-	filterAplicado   = "aplicado"
-	filterEntrevista = "entrevista"
-	filterNoAplicar  = "no_aplicar"
-	filterTop        = "top"
+	filterAll       = "all"
+	filterEvaluated = "evaluated"
+	filterApplied   = "applied"
+	filterInterview = "interview"
+	filterSkip      = "skip"
+	filterTop       = "top"
 )
 
 type pipelineTab struct {
@@ -68,20 +68,20 @@ type pipelineTab struct {
 }
 
 var pipelineTabs = []pipelineTab{
-	{filterAll, "TODAS"},
-	{filterEvaluada, "EVALUADA"},
-	{filterAplicado, "APLICADO"},
-	{filterEntrevista, "ENTREVISTA"},
+	{filterAll, "ALL"},
+	{filterEvaluated, "EVALUATED"},
+	{filterApplied, "APPLIED"},
+	{filterInterview, "INTERVIEW"},
 	{filterTop, "TOP \u22654"},
-	{filterNoAplicar, "NO APLICAR"},
+	{filterSkip, "SKIP"},
 }
 
 var sortCycle = []string{sortScore, sortDate, sortCompany, sortStatus}
 
-var statusOptions = []string{"Evaluada", "Aplicado", "Respondido", "Entrevista", "Oferta", "Rechazado", "Descartado", "NO APLICAR"}
+var statusOptions = []string{"Evaluated", "Applied", "Responded", "Interview", "Offer", "Rejected", "Discarded", "SKIP"}
 
 // statusGroupOrder defines display order for grouped view.
-var statusGroupOrder = []string{"entrevista", "oferta", "respondido", "aplicado", "evaluada", "no_aplicar", "rechazado", "descartado"}
+var statusGroupOrder = []string{"interview", "offer", "responded", "applied", "evaluated", "skip", "rejected", "discarded"}
 
 // PipelineModel implements the career pipeline dashboard screen.
 type PipelineModel struct {
@@ -585,7 +585,7 @@ func (m PipelineModel) renderBody() string {
 		emptyStyle := lipgloss.NewStyle().
 			Foreground(m.theme.Subtext).
 			Padding(1, 2)
-		return emptyStyle.Render("No hay ofertas con este filtro")
+		return emptyStyle.Render("No offers match this filter")
 	}
 
 	var lines []string
@@ -725,7 +725,7 @@ func (m PipelineModel) renderPreview() string {
 		}
 		lines = append(lines, padStyle.Render(dimStyle.Render(notes)))
 	} else {
-		lines = append(lines, padStyle.Render(dimStyle.Render("Cargando preview...")))
+		lines = append(lines, padStyle.Render(dimStyle.Render("Loading preview...")))
 	}
 
 	return strings.Join(lines, "\n")
@@ -743,9 +743,9 @@ func (m PipelineModel) renderHelp() string {
 
 	if m.statusPicker {
 		return style.Render(
-			keyStyle.Render("\u2191\u2193") + descStyle.Render(" navegar  ") +
-				keyStyle.Render("Enter") + descStyle.Render(" confirmar  ") +
-				keyStyle.Render("Esc") + descStyle.Render(" cancelar"))
+			keyStyle.Render("↑↓") + descStyle.Render(" navigate  ") +
+				keyStyle.Render("Enter") + descStyle.Render(" confirm  ") +
+				keyStyle.Render("Esc") + descStyle.Render(" cancel"))
 	}
 
 	brand := lipgloss.NewStyle().Foreground(m.theme.Overlay).Render("career-ops by santifer.io")
@@ -754,9 +754,9 @@ func (m PipelineModel) renderHelp() string {
 		keyStyle.Render("←→") + descStyle.Render(" tabs  ") +
 		keyStyle.Render("s") + descStyle.Render(" sort  ") +
 		keyStyle.Render("Enter") + descStyle.Render(" report  ") +
-		keyStyle.Render("c") + descStyle.Render(" cambiar  ") +
-		keyStyle.Render("v") + descStyle.Render(" vista  ") +
-		keyStyle.Render("Esc") + descStyle.Render(" cerrar")
+		keyStyle.Render("c") + descStyle.Render(" change  ") +
+		keyStyle.Render("v") + descStyle.Render(" view  ") +
+		keyStyle.Render("Esc") + descStyle.Render(" quit")
 
 	gap := m.width - lipgloss.Width(keys) - lipgloss.Width(brand) - 2
 	if gap < 1 {
@@ -777,7 +777,7 @@ func (m PipelineModel) overlayStatusPicker(body string) string {
 		Bold(true)
 
 	var picker []string
-	picker = append(picker, padStyle.Render(borderStyle.Render("Cambiar estado:")))
+	picker = append(picker, padStyle.Render(borderStyle.Render("Change status:")))
 
 	for i, opt := range statusOptions {
 		style := lipgloss.NewStyle().Foreground(m.theme.Text).Width(pickerWidth)
@@ -813,14 +813,14 @@ func (m PipelineModel) scoreStyle(score float64) lipgloss.Style {
 
 func (m PipelineModel) statusColorMap() map[string]lipgloss.Color {
 	return map[string]lipgloss.Color{
-		"entrevista": m.theme.Green,
-		"oferta":     m.theme.Green,
-		"aplicado":   m.theme.Sky,
-		"respondido": m.theme.Blue,
-		"evaluada":   m.theme.Text,
-		"no_aplicar": m.theme.Red,
-		"rechazado":  m.theme.Subtext,
-		"descartado": m.theme.Subtext,
+		"interview": m.theme.Green,
+		"offer":     m.theme.Green,
+		"applied":   m.theme.Sky,
+		"responded": m.theme.Blue,
+		"evaluated": m.theme.Text,
+		"skip":      m.theme.Red,
+		"rejected":  m.theme.Subtext,
+		"discarded": m.theme.Subtext,
 	}
 }
 
@@ -836,22 +836,22 @@ func (m PipelineModel) countByNormStatus(status string) int {
 
 func statusLabel(norm string) string {
 	switch norm {
-	case "entrevista":
-		return "Entrevista"
-	case "oferta":
-		return "Oferta"
-	case "respondido":
-		return "Respondido"
-	case "aplicado":
-		return "Aplicado"
-	case "evaluada":
-		return "Evaluada"
-	case "no_aplicar":
-		return "No aplicar"
-	case "rechazado":
-		return "Rechazado"
-	case "descartado":
-		return "Descartado"
+	case "interview":
+		return "Interview"
+	case "offer":
+		return "Offer"
+	case "responded":
+		return "Responded"
+	case "applied":
+		return "Applied"
+	case "evaluated":
+		return "Evaluated"
+	case "skip":
+		return "Skip"
+	case "rejected":
+		return "Rejected"
+	case "discarded":
+		return "Discarded"
 	default:
 		return norm
 	}
