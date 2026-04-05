@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"os/exec"
 
 	tea "github.com/charmbracelet/bubbletea"
 
@@ -13,8 +12,17 @@ import (
 	"github.com/santifer/career-ops/dashboard/internal/ui/screens"
 )
 
+type viewState int
+
+const (
+	viewPipeline viewState = iota
+	viewReport
+)
+
 type appModel struct {
 	pipeline      screens.PipelineModel
+	viewer        screens.ViewerModel
+	state         viewState
 	careerOpsPath string
 }
 
@@ -26,6 +34,9 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
 		m.pipeline.Resize(msg.Width, msg.Height)
+		if m.state == viewReport {
+			m.viewer.Resize(msg.Width, msg.Height)
+		}
 		pm, cmd := m.pipeline.Update(msg)
 		m.pipeline = pm
 		return m, cmd
@@ -43,7 +54,6 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if err != nil {
 			return m, nil
 		}
-		// Reload applications
 		apps := data.ParseApplications(m.careerOpsPath)
 		metrics := data.ComputeMetrics(apps)
 		old := m.pipeline
@@ -56,14 +66,24 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, nil
 
 	case screens.PipelineOpenReportMsg:
-		return m, tea.ExecProcess(exec.Command("less", msg.Path), func(err error) tea.Msg {
-			return reportViewerDoneMsg{}
-		})
+		m.viewer = screens.NewViewerModel(
+			theme.NewTheme("catppuccin-mocha"),
+			msg.Path, msg.Title,
+			m.pipeline.Width(), m.pipeline.Height(),
+		)
+		m.state = viewReport
+		return m, nil
 
-	case reportViewerDoneMsg:
+	case screens.ViewerClosedMsg:
+		m.state = viewPipeline
 		return m, nil
 
 	default:
+		if m.state == viewReport {
+			vm, cmd := m.viewer.Update(msg)
+			m.viewer = vm
+			return m, cmd
+		}
 		pm, cmd := m.pipeline.Update(msg)
 		m.pipeline = pm
 		return m, cmd
@@ -71,10 +91,11 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m appModel) View() string {
+	if m.state == viewReport {
+		return m.viewer.View()
+	}
 	return m.pipeline.View()
 }
-
-type reportViewerDoneMsg struct{}
 
 func main() {
 	pathFlag := flag.String("path", ".", "Path to career-ops directory")
