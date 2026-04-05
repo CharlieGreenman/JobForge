@@ -44,6 +44,8 @@ fi
 #   CURSOR_AGENT_MODEL        Passed as --model (default: composer-2)
 #   CURSOR_AGENT_EXTRA        Extra instructions appended to the built-in prompt
 #   CURSOR_AGENT_VERBOSE      If 1, stream agent progress via stream-json (default: 1). 0 = text only
+#   CURSOR_AGENT_GIT_AUTHOR_NAME   Git author/committer name (default: Charlie Greenman)
+#   CURSOR_AGENT_GIT_AUTHOR_EMAIL  Git author/committer email (default: GitHub noreply for this repo)
 #
 # Usage:
 #   ./scripts/cursor-agent-loop.sh
@@ -109,6 +111,12 @@ else
   PUSH_TEXT="Do not run git push."
 fi
 
+GIT_AUTHOR_NAME="${CURSOR_AGENT_GIT_AUTHOR_NAME:-Charlie Greenman}"
+GIT_AUTHOR_EMAIL="${CURSOR_AGENT_GIT_AUTHOR_EMAIL:-CharlieGreenman@users.noreply.github.com}"
+export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL
+export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+
 build_prompt() {
   cat <<EOF
 You are working on JobForge, an AI-powered job-search pipeline (Claude Code modes, Node utilities, optional Go dashboard). Respect CLAUDE.md, CONTRIBUTING.md, and .cursor rules if present.
@@ -134,7 +142,12 @@ Single iteration — do exactly one cohesive, meaningful slice of work:
    (cd dashboard && go build .)
    If you did not change dashboard/, the go build still must pass — fix any breakage you introduced. If Go is missing from the environment, say so clearly and stop rather than skipping silently.
 
-5. If you made real changes: git add only what belongs to this task, then git commit with a conventional message (feat:/fix:/chore:/docs:/test:/refactor: as appropriate).
+5. If you made real changes: git add only what belongs to this task, then commit with author and message rules:
+   - Author must be exactly: ${GIT_AUTHOR_NAME} <${GIT_AUTHOR_EMAIL}>
+     Use: git commit --author="${GIT_AUTHOR_NAME} <${GIT_AUTHOR_EMAIL}>" -m "type: short description"
+     (GIT_AUTHOR_*/GIT_COMMITTER_* may already be exported for this session; the result must still show that author.)
+   - Subject/body: conventional prefix (feat:/fix:/chore:/docs:/test:/refactor:). Describe the change only.
+   - Do not mention Cursor, Cursor Agent, ChatGPT, Claude, automation, bots, or "AI" / "generated" in the commit message.
    ${PUSH_TEXT}
 
 6. Do not force-push. Do not rewrite published history.
