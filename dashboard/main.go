@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"os/exec"
+	"runtime"
 
 	tea "github.com/charmbracelet/bubbletea"
 
@@ -77,6 +79,22 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case screens.ViewerClosedMsg:
 		m.state = viewPipeline
 		return m, nil
+
+	case screens.PipelineOpenURLMsg:
+		url := msg.URL
+		return m, func() tea.Msg {
+			var cmd *exec.Cmd
+			switch runtime.GOOS {
+			case "darwin":
+				cmd = exec.Command("open", url)
+			case "linux":
+				cmd = exec.Command("xdg-open", url)
+			default:
+				cmd = exec.Command("open", url)
+			}
+			_ = cmd.Start()
+			return nil
+		}
 
 	default:
 		if m.state == viewReport {

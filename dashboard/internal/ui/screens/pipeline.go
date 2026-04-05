@@ -24,6 +24,11 @@ type PipelineOpenReportMsg struct {
 	JobURL string
 }
 
+// PipelineOpenURLMsg is emitted when a job URL should be opened in browser.
+type PipelineOpenURLMsg struct {
+	URL string
+}
+
 // PipelineLoadReportMsg requests lazy loading of a report summary.
 type PipelineLoadReportMsg struct {
 	CareerOpsPath string
@@ -247,6 +252,13 @@ func (m PipelineModel) handleKey(msg tea.KeyMsg) (PipelineModel, tea.Cmd) {
 			jobURL := app.JobURL
 			return m, func() tea.Msg {
 				return PipelineOpenReportMsg{Path: fullPath, Title: title, JobURL: jobURL}
+			}
+		}
+
+	case "o":
+		if app, ok := m.CurrentApp(); ok && app.JobURL != "" {
+			return m, func() tea.Msg {
+				return PipelineOpenURLMsg{URL: app.JobURL}
 			}
 		}
 
@@ -482,7 +494,7 @@ func (m PipelineModel) renderHeader() string {
 
 	right := lipgloss.NewStyle().Foreground(m.theme.Subtext)
 	avg := fmt.Sprintf("%.1f", m.metrics.AvgScore)
-	info := right.Render(fmt.Sprintf("%d ofertas | Avg %s/5", m.metrics.Total, avg))
+	info := right.Render(fmt.Sprintf("%d offers | Avg %s/5", m.metrics.Total, avg))
 
 	title := lipgloss.NewStyle().Bold(true).Foreground(m.theme.Blue).Render("CAREER PIPELINE")
 	gap := m.width - lipgloss.Width(title) - lipgloss.Width(info) - 4
@@ -754,6 +766,7 @@ func (m PipelineModel) renderHelp() string {
 		keyStyle.Render("←→") + descStyle.Render(" tabs  ") +
 		keyStyle.Render("s") + descStyle.Render(" sort  ") +
 		keyStyle.Render("Enter") + descStyle.Render(" report  ") +
+		keyStyle.Render("o") + descStyle.Render(" open URL  ") +
 		keyStyle.Render("c") + descStyle.Render(" change  ") +
 		keyStyle.Render("v") + descStyle.Render(" view  ") +
 		keyStyle.Render("Esc") + descStyle.Render(" quit")
