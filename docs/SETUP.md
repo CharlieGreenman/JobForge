@@ -54,6 +54,8 @@ claude
 
 Then paste a job offer URL or description. JobForge will automatically evaluate it, generate a report, create a tailored PDF, and track it.
 
+When you want to tune archetypes, scanner keywords, or the PDF template, see [Customization](CUSTOMIZATION.md).
+
 ## Available Commands
 
 | Action | How |
@@ -70,7 +72,7 @@ Then paste a job offer URL or description. JobForge will automatically evaluate 
 
 ```bash
 npm run verify               # Pipeline integrity (same as verify-pipeline.mjs; OK if tracker not created yet)
-node cv-sync-check.mjs       # Configuration check (requires cv.md and config/profile.yml)
+npm run sync-check           # Same as node cv-sync-check.mjs — requires cv.md and config/profile.yml
 ```
 
 ## Build Dashboard (Optional)

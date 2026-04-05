@@ -55,5 +55,7 @@ cd dashboard && go build -o job-forge-dashboard .
 
 ## Need Help?
 
+- [Setup guide](docs/SETUP.md) — install, profile, CV, portals, verify
+- [Architecture](docs/ARCHITECTURE.md) — how evaluation, batch, and scripts fit together
+- [Customization](docs/CUSTOMIZATION.md) — profile, archetypes, portals, template, states
 - [Open an issue](https://github.com/CharlieGreenman/JobForge/issues)
-- [Read the architecture docs](docs/ARCHITECTURE.md)
