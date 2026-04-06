@@ -27,6 +27,9 @@ Determine the mode from `{{mode}}`:
 | `apply` | `apply` |
 | `scan` | `scan` |
 | `batch` | `batch` |
+| `followup` | `followup` |
+| `rejection` | `rejection` |
+| `negotiation` | `negotiation` |
 
 **Auto-pipeline detection:** If `{{mode}}` is not a known sub-command AND contains JD text (keywords: "responsibilities", "requirements", "qualifications", "about the role", "we're looking for", company name + role) or a URL to a JD, execute `auto-pipeline`.
 
@@ -52,9 +55,12 @@ Available commands:
   /job-forge training  → Evaluate course/cert against North Star
   /job-forge project   → Evaluate portfolio project idea
   /job-forge tracker   → Application status overview
+  /job-forge followup  → Follow-up timing and nudges from the tracker
   /job-forge apply     → Live application assistant (reads form + generates answers)
   /job-forge scan      → Scan portals and discover new offers
   /job-forge batch     → Batch processing with parallel workers
+  /job-forge negotiation → Negotiate a received offer (comp and terms)
+  /job-forge rejection → Log a rejection or review rejection patterns
 
 Inbox: add URLs to data/pipeline.md → /job-forge pipeline
 Or paste a JD directly to run the full pipeline.
@@ -74,7 +80,7 @@ Applies to: `auto-pipeline`, `offer`, `compare`, `pdf`, `contact`, `apply`, `pip
 ### Standalone modes (only their mode file):
 Read `modes/{mode}.md`
 
-Applies to: `tracker`, `deep`, `training`, `project`
+Applies to: `tracker`, `deep`, `training`, `project`, `followup`, `rejection`, `negotiation`
 
 ### Modes delegated to subagent:
 For `scan`, `apply` (with Playwright), and `pipeline` (3+ URLs): launch as Agent with the content of `_shared.md` + `modes/{mode}.md` injected into the subagent prompt.
