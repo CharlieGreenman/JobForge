@@ -603,6 +603,11 @@ tracked_companies:
     notes: "Postgres platform; AI and edge database features."
     enabled: true
 
+  - name: PostHog
+    careers_url: https://jobs.ashbyhq.com/posthog
+    notes: "Open-source product analytics, feature flags, and session replay; remote-friendly."
+    enabled: true
+
   - name: Neon
     careers_url: https://jobs.ashbyhq.com/neon
     notes: "Serverless Postgres; branching for dev and staging."
