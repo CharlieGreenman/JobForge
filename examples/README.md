@@ -8,6 +8,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 | [cv-example-backend-engineer.md](cv-example-backend-engineer.md) | Full CV — backend / distributed systems profile |
 | [cv-example-data-engineer.md](cv-example-data-engineer.md) | Full CV — data / analytics engineering profile |
 | [cv-example-frontend-engineer.md](cv-example-frontend-engineer.md) | Full CV — frontend / UI engineering profile |
+| [cv-example-devops-engineer.md](cv-example-devops-engineer.md) | Full CV — DevOps / platform / SRE-style profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
 | [sample-report.md](sample-report.md) | Illustrative evaluation report layout |
 
