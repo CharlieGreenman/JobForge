@@ -167,6 +167,13 @@ JobForge/
 └── fonts/                       # Space Grotesk + DM Sans
 ```
 
+## Documentation
+
+- [Setup](docs/SETUP.md) — install Node/Playwright, profile, CV, portals, `npm run verify`
+- [Architecture](docs/ARCHITECTURE.md) — modes, evaluation flow, batch runner, pipeline scripts
+- [Customization](docs/CUSTOMIZATION.md) — archetypes, scanner keywords, CV template, states
+- [Contributing](CONTRIBUTING.md) — branch workflow, quality gate, and ideas for PRs
+
 ## License
 
 MIT
