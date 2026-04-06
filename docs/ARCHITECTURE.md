@@ -130,6 +130,7 @@ Scripts maintain data consistency:
 | `verify-pipeline.mjs` | Health check: statuses, duplicates, report links, pending TSVs |
 | `dedup-tracker.mjs` | Removes duplicate entries by company+role |
 | `normalize-statuses.mjs` | Maps status aliases to canonical values |
+| `generate-pdf.mjs` | Renders HTML to PDF with Playwright/Chromium (`npm run pdf -- <input.html> <output.pdf>`); requires `npx playwright install chromium` |
 | `cv-sync-check.mjs` | Setup lint: `cv.md` + `config/profile.yml`, hardcoded-metric scan on `modes/_shared.md` and `batch/batch-prompt.md`, optional `article-digest.md` freshness |
 
 ## Dashboard TUI
