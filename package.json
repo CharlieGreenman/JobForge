@@ -17,6 +17,9 @@
     "url": "https://github.com/CharlieGreenman/JobForge"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "playwright": "^1.58.1"
   }

@@ -40,16 +40,13 @@ npm run verify
 (cd dashboard && go build .)
 ```
 
-`npm run verify` runs `verify-pipeline.mjs`. It exits successfully when `data/applications.md` is missing (fresh clone). Optional local setup checks:
+`npm run verify` runs `verify-pipeline.mjs`. It exits successfully when `data/applications.md` is missing (fresh clone).
 
-```bash
-npm run sync-check   # node cv-sync-check.mjs — expects cv.md and config/profile.yml
-```
-
-Other npm scripts (tracker and PDF maintenance):
+Other npm scripts:
 
 | Script | Runs | Notes |
 |--------|------|--------|
+| `npm run sync-check` | `cv-sync-check.mjs` | Optional setup lint: `cv.md`, `config/profile.yml`, hardcoded-metric scan; fails if those files are missing |
 | `npm run normalize` | `normalize-statuses.mjs` | Maps non-canonical statuses in `data/applications.md`; no-op if the tracker file is missing |
 | `npm run dedup` | `dedup-tracker.mjs` | Merges duplicate company/role rows; no-op if the tracker file is missing |
 | `npm run merge` | `merge-tracker.mjs` | Merges `batch/tracker-additions/*.tsv` into the tracker; no-op if nothing pending |
