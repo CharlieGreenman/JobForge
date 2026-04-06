@@ -57,11 +57,11 @@ Other npm scripts (tracker and PDF maintenance):
 
 You can run the same `.mjs` files with `node <script>.mjs` from the repo root if you prefer.
 
-Dashboard (optional TUI):
+Dashboard (optional TUI). The `-path` flag must be the JobForge repo root (where `data/applications.md` or `applications.md` lives), not the `dashboard/` folder:
 
 ```bash
 cd dashboard && go build -o job-forge-dashboard .
-./job-forge-dashboard --path .
+./job-forge-dashboard -path ..
 ```
 
 ### Optional: scripted agent iterations

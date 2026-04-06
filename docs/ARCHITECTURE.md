@@ -105,10 +105,23 @@ Scripts maintain data consistency:
 
 ## Dashboard TUI
 
-The `dashboard/` directory contains a standalone Go TUI application that visualizes the pipeline:
+The `dashboard/` directory contains a standalone Go TUI application that visualizes the pipeline.
 
-- Filter tabs: All, Evaluated, Applied, Interview, Top >=4, SKIP
+**Repo root:** The program needs the path to the JobForge checkout (the directory that contains `modes/`, `reports/`, and the tracker). Flag `-path` sets that directory (default `.`, i.e. the process working directory). If you run the binary from inside `dashboard/` after `go build`, use `-path ..` so the tracker is found.
+
+**Tracker file:** Same resolution as the Node scripts: `{path}/applications.md` first, then `{path}/data/applications.md`.
+
+**Build / run** (see also [SETUP.md](SETUP.md#build-dashboard-optional)):
+
+```bash
+cd dashboard && go build -o job-forge-dashboard .
+./job-forge-dashboard -path ..
+```
+
+**UI:**
+
+- Filter tabs: All, Evaluated, Applied, Interview, Top ≥4, SKIP
 - Sort modes: Score, Date, Company, Status
 - Grouped/flat view
 - Lazy-loaded report previews
-- Inline status picker
+- Inline status picker; on-screen key hints at the bottom of the pipeline view

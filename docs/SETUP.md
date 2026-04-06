@@ -79,10 +79,19 @@ Optional tracker and PDF scripts (`normalize`, `dedup`, `merge`, `pdf`) are list
 
 ## Build Dashboard (Optional)
 
+The TUI reads the tracker at the **JobForge repo root** (`applications.md` or `data/applications.md`). If you build inside `dashboard/`, point `-path` at the parent directory:
+
 ```bash
 cd dashboard
 go build -o job-forge-dashboard .
-./job-forge-dashboard            # Opens TUI pipeline viewer
+./job-forge-dashboard -path ..   # repo root is one level up
+```
+
+From the repo root after building (same quality gate as in [CONTRIBUTING.md](../CONTRIBUTING.md#development)):
+
+```bash
+(cd dashboard && go build -o job-forge-dashboard .)
+./dashboard/job-forge-dashboard -path .
 ```
 
 ## Contributing
