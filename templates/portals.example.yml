@@ -215,6 +215,18 @@ tracked_companies:
     notes: "Search and answer products built on large language models."
     enabled: true
 
+  - name: Replicate
+    careers_url: https://jobs.ashbyhq.com/replicate
+    notes: "APIs for running and shipping ML models."
+    enabled: true
+
+  - name: Hugging Face
+    careers_url: https://apply.workable.com/huggingface/
+    scan_method: websearch
+    scan_query: 'site:apply.workable.com/huggingface "engineer" OR "ML" OR "AI" OR "research"'
+    notes: "Open-source ML hub and inference platform."
+    enabled: true
+
   # -- Voice AI & Conversational AI --
 
   - name: PolyAI
