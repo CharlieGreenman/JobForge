@@ -56,6 +56,21 @@ Then paste a job offer URL or description. JobForge will automatically evaluate 
 
 When you want to tune archetypes, scanner keywords, or the PDF template, see [Customization](CUSTOMIZATION.md).
 
+## Application tracker (optional until first evaluation)
+
+New rows go to **`data/applications.md`** when that file exists. If it does not exist, utilities and the dashboard fall back to **`applications.md`** in the repo root (same column layout). A fresh clone often has neither file yet; that is normal, and `npm run verify` still exits successfully.
+
+To start with an empty tracker (for example before you paste your first URL), create `data/applications.md` with this header:
+
+```markdown
+# Applications Tracker
+
+| # | Date | Company | Role | Score | Status | PDF | Report | Notes |
+|---|------|---------|------|-------|--------|-----|--------|-------|
+```
+
+Status values should match [templates/states.yml](../templates/states.yml); see the **States** section in [Customization](CUSTOMIZATION.md). After batch evaluations, run `npm run merge` to pull in `batch/tracker-additions/*.tsv` when your workflow uses those files.
+
 ## Available Commands
 
 | Action | How |
