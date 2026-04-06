@@ -7,7 +7,7 @@ This folder holds the **parallel batch runner** for processing many job URLs wit
 | Path | Role |
 |------|------|
 | `batch-runner.sh` | Orchestrator: parallelism, state, retries, resume |
-| `batch-prompt.md` | Prompt template passed to each worker |
+| `batch-prompt.md` | Prompt template passed to each worker (keep evaluation and scoring instructions aligned with the canonical model in [`modes/_shared.md`](../modes/_shared.md) so batch scores match single-offer runs) |
 | `README.md` | This file |
 
 ## Local-only files (gitignored when present)

@@ -143,6 +143,9 @@ Install Go 1.21+ and put it on your `PATH`, or omit the dashboard; everything el
 **`npm run merge` says there is nothing to merge, but you have TSV files**  
 Only files directly under `batch/tracker-additions/` with a `.tsv` extension are picked up. After a successful merge, rows are merged into the tracker and those files move to `batch/tracker-additions/merged/`, so a second run correctly finds nothing left. If you created TSVs elsewhere or only have files under `merged/`, move or regenerate them in the top-level `tracker-additions` folder (see [batch/README.md](../batch/README.md)).
 
+**A `local:jds/...` line in the pipeline does not resolve**  
+Paths are relative to the repository root: create the markdown file under `jds/` and list it in `data/pipeline.md` as `local:jds/{filename}.md` (same spelling as the file name). See [jds/README.md](../jds/README.md) and [`modes/pipeline.md`](../modes/pipeline.md).
+
 ## Contributing
 
 Pull requests and issue reports are welcome. See [CONTRIBUTING.md](../CONTRIBUTING.md) for branch workflow, ideas (documentation, `examples/`, `templates/portals.example.yml`, dashboard features, utility scripts), and the checks maintainers expect before a PR (`npm run verify` and `npm run build:dashboard`).
