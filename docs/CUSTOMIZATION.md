@@ -42,6 +42,10 @@ The HTML template uses these design tokens:
 
 To customize fonts/colors, edit the CSS in the template. Update font files in `fonts/` if switching fonts.
 
+## Examples (`examples/`)
+
+Fictional samples for structure and tone — not real candidates. See [`examples/README.md`](../examples/README.md) for markdown CVs, an optional article-digest example, and a sample report layout. Use them as templates, then replace every detail with your own before applying.
+
 ## Negotiation Scripts (modes/_shared.md)
 
 The negotiation section provides frameworks for salary discussions. Replace the example scripts with your own:

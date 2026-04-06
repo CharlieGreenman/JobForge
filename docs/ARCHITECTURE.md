@@ -70,6 +70,8 @@ Each worker is a headless Claude instance (`claude -p`) that receives the full `
 
 The orchestrator manages parallelism, state, retries, and resume.
 
+**Local batch artifacts:** `batch/batch-input.tsv`, `batch/batch-state.tsv`, `batch/logs/`, and `batch/tracker-additions/*.tsv` are created when you run the runner; they are gitignored (with `.gitkeep` where needed). A fresh clone ships `batch/batch-runner.sh` and `batch/batch-prompt.md` only until you add an input file — see `batch/batch-runner.sh --help` for the TSV column layout.
+
 ## Data Flow
 
 ```
