@@ -17,6 +17,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 | [cv-example-qa-engineer.md](cv-example-qa-engineer.md) | Full CV — QA / test automation engineering profile |
 | [cv-example-solutions-architect.md](cv-example-solutions-architect.md) | Full CV — solutions / enterprise architecture profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
+| [sample-jd.md](sample-jd.md) | Fictional job description in markdown — template shape for `local:jds/…` pipeline entries (real JDs live under `jds/`, gitignored) |
 | [sample-report.md](sample-report.md) | Illustrative evaluation report layout |
 
 To start from a template: copy one of the CV files to the repo root as `cv.md`, then edit every section. See [docs/SETUP.md](../docs/SETUP.md) for the full setup flow.

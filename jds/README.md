@@ -16,6 +16,7 @@ Use this folder for **markdown copies of job descriptions** you want to evaluate
 
 - One posting per file is easiest to track; name files so you recognize the role and company (slug-style names work well).
 - Keep content as plain markdown or pasted JD text; no special front matter is required by the tooling described above.
+- For a **fictional** structural example (safe to commit), see [`examples/sample-jd.md`](../examples/sample-jd.md). Your real files stay under `jds/` and remain gitignored.
 
 ## Git
 
