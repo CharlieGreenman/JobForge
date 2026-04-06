@@ -11,19 +11,32 @@
  * If duplicate with higher score → update in-place, update report link
  * Validates status against templates/states.yml when present (else built-in labels)
  *
+ * If pending TSVs exist but neither data/applications.md nor applications.md exists yet,
+ * creates data/applications.md with the standard empty table header (unless --dry-run).
+ *
  * Run: node merge-tracker.mjs [--dry-run] [--verify]   (from repo root)
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, renameSync, existsSync } from 'fs';
-import { join, basename, relative, dirname } from 'path';
+import { join, relative, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const PROJECT_DIR = dirname(fileURLToPath(import.meta.url));
-// Support both layouts: data/applications.md (boilerplate) and applications.md (original)
-const APPS_FILE = existsSync(join(PROJECT_DIR, 'data/applications.md'))
-  ? join(PROJECT_DIR, 'data/applications.md')
-  : join(PROJECT_DIR, 'applications.md');
-const appsDisplay = relative(PROJECT_DIR, APPS_FILE).replace(/\\/g, '/');
+const DATA_APPS = join(PROJECT_DIR, 'data/applications.md');
+const ROOT_APPS = join(PROJECT_DIR, 'applications.md');
+
+/** Same resolution as other scripts: prefer data/applications.md when present. */
+function getAppsFilePath() {
+  return existsSync(DATA_APPS) ? DATA_APPS : ROOT_APPS;
+}
+
+const TRACKER_HEADER_LINES = [
+  '# Applications Tracker',
+  '',
+  '| # | Date | Company | Role | Score | Status | PDF | Report | Notes |',
+  '|---|------|---------|------|-------|--------|-----|--------|-------|',
+];
+
 const ADDITIONS_DIR = join(PROJECT_DIR, 'batch/tracker-additions');
 const MERGED_DIR = join(ADDITIONS_DIR, 'merged');
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -197,13 +210,39 @@ function parseTsvContent(content, filename) {
 
 // ---- Main ----
 
-// Read applications.md
-if (!existsSync(APPS_FILE)) {
-  console.log('No tracker file (data/applications.md or applications.md). Nothing to merge into.');
+// Read tracker additions first so we can bootstrap an empty tracker when needed
+if (!existsSync(ADDITIONS_DIR)) {
+  console.log('No batch/tracker-additions directory found.');
   process.exit(0);
 }
-const appContent = readFileSync(APPS_FILE, 'utf-8');
-const appLines = appContent.split('\n');
+
+const tsvFiles = readdirSync(ADDITIONS_DIR).filter(f => f.endsWith('.tsv'));
+if (tsvFiles.length === 0) {
+  console.log('✅ No pending additions to merge.');
+  process.exit(0);
+}
+
+let APPS_FILE = getAppsFilePath();
+let appLines;
+
+if (!existsSync(APPS_FILE)) {
+  if (DRY_RUN) {
+    console.log('(dry-run) Would create data/applications.md with empty tracker header.');
+    APPS_FILE = DATA_APPS;
+    appLines = [...TRACKER_HEADER_LINES];
+  } else {
+    console.log('No tracker file yet; creating data/applications.md with empty header.');
+    mkdirSync(join(PROJECT_DIR, 'data'), { recursive: true });
+    writeFileSync(DATA_APPS, `${TRACKER_HEADER_LINES.join('\n')}\n`, 'utf-8');
+    APPS_FILE = DATA_APPS;
+    appLines = readFileSync(APPS_FILE, 'utf-8').split('\n');
+  }
+} else {
+  appLines = readFileSync(APPS_FILE, 'utf-8').split('\n');
+}
+
+const appsDisplay = relative(PROJECT_DIR, APPS_FILE).replace(/\\/g, '/');
+
 const existingApps = [];
 let maxNum = 0;
 
@@ -217,19 +256,7 @@ for (const line of appLines) {
   }
 }
 
-console.log(`📊 Existing: ${existingApps.length} entries, max #${maxNum}`);
-
-// Read tracker additions
-if (!existsSync(ADDITIONS_DIR)) {
-  console.log('No batch/tracker-additions directory found.');
-  process.exit(0);
-}
-
-const tsvFiles = readdirSync(ADDITIONS_DIR).filter(f => f.endsWith('.tsv'));
-if (tsvFiles.length === 0) {
-  console.log('✅ No pending additions to merge.');
-  process.exit(0);
-}
+console.log(`📊 ${appsDisplay}: ${existingApps.length} existing entries, max #${maxNum}`);
 
 // Sort files numerically for deterministic processing
 tsvFiles.sort((a, b) => {
