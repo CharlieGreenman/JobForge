@@ -14,6 +14,7 @@ batch/tracker-additions/*.tsv
 !batch/tracker-additions/.gitkeep
 jds/*
 !jds/.gitkeep
+!jds/README.md
 
 # User config
 config/profile.yml

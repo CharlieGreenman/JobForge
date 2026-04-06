@@ -30,5 +30,5 @@ Terminal workflows and PR-style gates are documented across a few files. Use thi
 - [examples/README.md](../examples/README.md) — fictional CV samples and illustrative report layout
 - [interview-prep/story-bank.md](../interview-prep/story-bank.md) — optional STAR+R story bank (grows as you run evaluations)
 - [batch/README.md](../batch/README.md) — batch TSV input, merge step, and runner prerequisites
-- [`data/pipeline.md`](../data/) — inbox of pending offer URLs / local JD paths (create when needed; see [`modes/pipeline.md`](../modes/pipeline.md)); saved JD text often lives under [`jds/`](../jds/) as `local:jds/{file}`
+- [`data/pipeline.md`](../data/) — inbox of pending offer URLs / local JD paths (create when needed; see [`modes/pipeline.md`](../modes/pipeline.md)); saved JD text often lives under [`jds/`](../jds/) as `local:jds/{file}` (see [jds/README.md](../jds/README.md))
 - [scripts/cursor-agent-loop.sh](../scripts/cursor-agent-loop.sh) — optional driver for repeated non-interactive passes; see the **Checks and automation** table above and [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations)
