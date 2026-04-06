@@ -155,8 +155,12 @@ JobForge/
 ├── batch/
 │   ├── batch-prompt.md          # Self-contained worker prompt
 │   └── batch-runner.sh          # Orchestrator script
+├── dashboard/                   # Optional Go TUI for the tracker (`go build` in this dir)
+├── docs/                        # SETUP, ARCHITECTURE, CUSTOMIZATION
+├── examples/                    # Fictional CV samples + sample report (see examples/README.md)
 ├── interview-prep/
 │   └── story-bank.md            # Curated STAR stories (max 12)
+├── scripts/                     # Optional agent loop helper (see CONTRIBUTING.md)
 ├── data/                        # Your tracking data (gitignored)
 ├── reports/                     # Evaluation reports (gitignored)
 ├── output/                      # Generated PDFs (gitignored)
