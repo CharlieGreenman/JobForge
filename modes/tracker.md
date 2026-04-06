@@ -1,10 +1,11 @@
 # Mode: tracker — Application Tracker
 
-Reads and displays `data/applications.md`.
+Reads and displays the application tracker: `data/applications.md` when present, otherwise `applications.md` in the repo root (same columns).
 
 **Tracker format:**
 ```markdown
-| # | Date | Company | Role | Score | Status | PDF | Report |
+| # | Date | Company | Role | Score | Status | PDF | Report | Notes |
+|---|------|---------|------|-------|--------|-----|--------|-------|
 ```
 
 Possible states (canonical, per `templates/states.yml`):
