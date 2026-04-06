@@ -10,6 +10,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 | [cv-example-frontend-engineer.md](cv-example-frontend-engineer.md) | Full CV — frontend / UI engineering profile |
 | [cv-example-devops-engineer.md](cv-example-devops-engineer.md) | Full CV — DevOps / platform / SRE-style profile |
 | [cv-example-product-manager.md](cv-example-product-manager.md) | Full CV — product / platform PM profile |
+| [cv-example-security-engineer.md](cv-example-security-engineer.md) | Full CV — application / cloud security engineering profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
 | [sample-report.md](sample-report.md) | Illustrative evaluation report layout |
 
