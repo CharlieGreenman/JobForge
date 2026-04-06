@@ -53,6 +53,8 @@ npm run verify   # optional: pipeline health after merge (report links, statuses
 
 (`node merge-tracker.mjs` — same as `npm run merge`; see [CONTRIBUTING.md](../CONTRIBUTING.md#development).)
 
+After a successful merge, each processed file is moved to **`batch/tracker-additions/merged/`** (created as needed). `npm run verify` only looks for `*.tsv` files in the **top level** of `batch/tracker-additions/`, so rows already merged and archived under `merged/` do not trigger the “pending TSVs” warning.
+
 ## Prerequisites
 
 The runner expects the `claude` CLI on `PATH` and a valid `batch-prompt.md`. It creates `reports/` and tracker paths as needed; ensure your usual JobForge setup (`cv.md`, profile, etc.) matches what `batch-prompt.md` assumes.
