@@ -75,6 +75,8 @@ npm run verify               # Pipeline integrity (same as verify-pipeline.mjs; 
 npm run sync-check           # Same as node cv-sync-check.mjs — requires cv.md and config/profile.yml
 ```
 
+Optional tracker and PDF scripts (`normalize`, `dedup`, `merge`, `pdf`) are listed in [CONTRIBUTING.md](../CONTRIBUTING.md#development).
+
 ## Build Dashboard (Optional)
 
 ```bash

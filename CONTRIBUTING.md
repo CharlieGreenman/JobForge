@@ -46,6 +46,17 @@ npm run verify
 npm run sync-check   # node cv-sync-check.mjs — expects cv.md and config/profile.yml
 ```
 
+Other npm scripts (tracker and PDF maintenance):
+
+| Script | Runs | Notes |
+|--------|------|--------|
+| `npm run normalize` | `normalize-statuses.mjs` | Maps non-canonical statuses in `data/applications.md`; no-op if the tracker file is missing |
+| `npm run dedup` | `dedup-tracker.mjs` | Merges duplicate company/role rows; no-op if the tracker file is missing |
+| `npm run merge` | `merge-tracker.mjs` | Merges `batch/tracker-additions/*.tsv` into the tracker; no-op if nothing pending |
+| `npm run pdf` | `generate-pdf.mjs` | Pass HTML and PDF paths after `--`, e.g. `npm run pdf -- output/cv.html output/cv.pdf` |
+
+You can run the same `.mjs` files with `node <script>.mjs` from the repo root if you prefer.
+
 Dashboard (optional TUI):
 
 ```bash
