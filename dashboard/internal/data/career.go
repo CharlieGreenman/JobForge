@@ -24,18 +24,30 @@ var (
 	reBatchID        = regexp.MustCompile(`(?m)^\*\*Batch ID:\*\*\s*(\d+)`)
 )
 
-// ParseApplications reads applications.md and returns parsed applications.
-// It tries both {path}/applications.md and {path}/data/applications.md for compatibility.
+// resolveApplicationsPath picks the tracker file the same way as Node utilities
+// (verify-pipeline.mjs, merge-tracker.mjs, etc.): prefer data/applications.md when
+// it exists, otherwise applications.md at the repo root.
+func resolveApplicationsPath(careerOpsPath string) (string, error) {
+	dataPath := filepath.Join(careerOpsPath, "data", "applications.md")
+	rootPath := filepath.Join(careerOpsPath, "applications.md")
+	if _, err := os.Stat(dataPath); err == nil {
+		return dataPath, nil
+	}
+	if _, err := os.Stat(rootPath); err == nil {
+		return rootPath, nil
+	}
+	return "", fmt.Errorf("no tracker at %s or %s", dataPath, rootPath)
+}
+
+// ParseApplications reads the applications tracker and returns parsed rows.
 func ParseApplications(careerOpsPath string) []model.CareerApplication {
-	filePath := filepath.Join(careerOpsPath, "applications.md")
+	filePath, err := resolveApplicationsPath(careerOpsPath)
+	if err != nil {
+		return nil
+	}
 	content, err := os.ReadFile(filePath)
 	if err != nil {
-		// Fallback: try data/ subdirectory
-		filePath = filepath.Join(careerOpsPath, "data", "applications.md")
-		content, err = os.ReadFile(filePath)
-		if err != nil {
-			return nil
-		}
+		return nil
 	}
 
 	lines := strings.Split(string(content), "\n")
@@ -533,9 +545,12 @@ func LoadReportSummary(careerOpsPath, reportPath string) (archetype, tldr, remot
 	return
 }
 
-// UpdateApplicationStatus updates the status of an application in applications.md.
+// UpdateApplicationStatus updates the status of an application in the resolved tracker file.
 func UpdateApplicationStatus(careerOpsPath string, app model.CareerApplication, newStatus string) error {
-	filePath := filepath.Join(careerOpsPath, "applications.md")
+	filePath, err := resolveApplicationsPath(careerOpsPath)
+	if err != nil {
+		return err
+	}
 	content, err := os.ReadFile(filePath)
 	if err != nil {
 		return err

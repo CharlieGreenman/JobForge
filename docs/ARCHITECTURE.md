@@ -109,7 +109,7 @@ The `dashboard/` directory contains a standalone Go TUI application that visuali
 
 **Repo root:** The program needs the path to the JobForge checkout (the directory that contains `modes/`, `reports/`, and the tracker). Flag `-path` sets that directory (default `.`, i.e. the process working directory). If you run the binary from inside `dashboard/` after `go build`, use `-path ..` so the tracker is found.
 
-**Tracker file:** Same resolution as the Node scripts: `{path}/applications.md` first, then `{path}/data/applications.md`.
+**Tracker file:** Same resolution as the Node scripts: `{path}/data/applications.md` when that file exists, otherwise `{path}/applications.md`.
 
 **Build / run** (see also [SETUP.md](SETUP.md#build-dashboard-optional)):
 
