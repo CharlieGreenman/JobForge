@@ -126,6 +126,20 @@ npm run build:dashboard
 
 To install a named binary under `dashboard/` (optional), use `go build -o job-forge-dashboard .` inside `dashboard/` and run `./dashboard/job-forge-dashboard -path .` instead.
 
+## Troubleshooting
+
+**`npm run verify` succeeds, but `npm run sync-check` fails**  
+`sync-check` requires `cv.md` and `config/profile.yml` with the fields checked in `cv-sync-check.mjs`. Until you finish the profile and CV steps in Quick Start, that is normal. Use `npm run verify` for pipeline health on a minimal checkout, then run `sync-check` once your personal files exist.
+
+**PDF generation fails with a browser or Chromium error**  
+From the repo root, run `npx playwright install chromium` after `npm install` so Puppeteer can launch the bundled browser.
+
+**Dashboard is empty or points at the wrong data**  
+The `-path` argument must be the JobForge repository root (where `data/applications.md` or `applications.md` lives), not the `dashboard/` directory. From the repo root after `npm run build:dashboard`, use `./dashboard/dashboard -path .` (see [Build Dashboard](#build-dashboard-optional) above).
+
+**`go build` or `npm run build:dashboard` reports `go: command not found`**  
+Install Go 1.21+ and put it on your `PATH`, or omit the dashboard; everything else runs with Node.js.
+
 ## Contributing
 
 Pull requests and issue reports are welcome. See [CONTRIBUTING.md](../CONTRIBUTING.md) for branch workflow, ideas (documentation, `examples/`, `templates/portals.example.yml`, dashboard features, utility scripts), and the checks maintainers expect before a PR (`npm run verify` and `npm run build:dashboard`).
