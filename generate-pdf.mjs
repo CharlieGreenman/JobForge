@@ -32,6 +32,9 @@ Usage:
 Requires: the playwright package (see package.json) and a local browser build,
   e.g. npx playwright install chromium
 
+Self-hosted fonts: when repo-root fonts/ exists, ./fonts/ URLs in the HTML are
+rewritten to absolute file:// paths. If fonts/ is missing, URLs are left unchanged.
+
 Run from the repository root or any cwd; paths may be relative or absolute.
 Creates the output directory (e.g. output/) when it does not exist yet.`);
   process.exit(0);
@@ -86,17 +89,23 @@ async function generatePDF() {
   // Read HTML to inject font paths as absolute file:// URLs
   let html = await readFile(inputPath, 'utf-8');
 
-  // Resolve font paths relative to repo-root fonts/
+  // Resolve font paths relative to repo-root fonts/ (skip if directory missing)
   const fontsDir = resolve(__dirname, 'fonts');
-  html = html.replace(
-    /url\(['"]?\.\/fonts\//g,
-    `url('file://${fontsDir}/`
-  );
-  // Close any unclosed quotes from the replacement
-  html = html.replace(
-    /file:\/\/([^'")]+)\.woff2['"]\)/g,
-    `file://$1.woff2')`
-  );
+  if (existsSync(fontsDir)) {
+    html = html.replace(
+      /url\(['"]?\.\/fonts\//g,
+      `url('file://${fontsDir}/`
+    );
+    // Close any unclosed quotes from the replacement
+    html = html.replace(
+      /file:\/\/([^'")]+)\.woff2['"]\)/g,
+      `file://$1.woff2')`
+    );
+  } else {
+    console.warn(
+      `⚠️  fonts/ not found at ${fontsDir} — leaving @font-face URLs unchanged`
+    );
+  }
 
   let chromium;
   try {
