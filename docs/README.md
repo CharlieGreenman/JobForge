@@ -10,6 +10,7 @@ Guides for installing JobForge, understanding how pieces fit together, and tailo
 
 ## Related material (repository root)
 
+- [modes/](../modes/) — per-command prompts used with `CLAUDE.md` (archetypes and shared scoring live in `_shared.md`; see **Modes** in [ARCHITECTURE.md](ARCHITECTURE.md))
 - [CLAUDE.md](../CLAUDE.md) — default agent instructions for Claude Code in this repo
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — branch workflow, quality gate, contribution ideas
 - [examples/README.md](../examples/README.md) — fictional CV samples and illustrative report layout
