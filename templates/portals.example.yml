@@ -239,6 +239,28 @@ tracked_companies:
     notes: "Inference hardware and hosted models (LPU)."
     enabled: true
 
+  - name: xAI
+    careers_url: https://job-boards.greenhouse.io/xai
+    api: https://boards-api.greenhouse.io/v1/boards/xai/jobs
+    notes: "Grok; model training and inference."
+    enabled: true
+
+  - name: CoreWeave
+    careers_url: https://job-boards.greenhouse.io/coreweave
+    api: https://boards-api.greenhouse.io/v1/boards/coreweave/jobs
+    notes: "GPU cloud and AI infrastructure."
+    enabled: true
+
+  - name: Modal
+    careers_url: https://jobs.ashbyhq.com/modal
+    notes: "Serverless GPUs and Python for ML workloads."
+    enabled: true
+
+  - name: Fireworks AI
+    careers_url: https://jobs.ashbyhq.com/fireworks.ai
+    notes: "Fast inference and fine-tuning for open models."
+    enabled: true
+
   # -- Voice AI & Conversational AI --
 
   - name: PolyAI
