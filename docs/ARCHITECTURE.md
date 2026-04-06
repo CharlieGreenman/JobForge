@@ -91,15 +91,17 @@ templates/cv-template.html → PDF generation template
 
 ## Pipeline Integrity
 
+From the repo root, `npm run verify` runs `verify-pipeline.mjs`. That check exits successfully when neither `data/applications.md` nor root `applications.md` exists yet (normal for a new clone). Optional setup validation after you add `cv.md` and `config/profile.yml`: `npm run sync-check` (`cv-sync-check.mjs`).
+
 Scripts maintain data consistency:
 
 | Script | Purpose |
 |--------|---------|
 | `merge-tracker.mjs` | Merges TSV rows from `batch/tracker-additions/` into `data/applications.md`, or root `applications.md` when the `data/` file is absent |
-| `verify-pipeline.mjs` | Health check: statuses, duplicates, links |
+| `verify-pipeline.mjs` | Health check: statuses, duplicates, report links, pending TSVs |
 | `dedup-tracker.mjs` | Removes duplicate entries by company+role |
 | `normalize-statuses.mjs` | Maps status aliases to canonical values |
-| `cv-sync-check.mjs` | Validates setup consistency |
+| `cv-sync-check.mjs` | Setup lint: `cv.md` + `config/profile.yml`, hardcoded-metric scan on `modes/_shared.md` and `batch/batch-prompt.md`, optional `article-digest.md` freshness |
 
 ## Dashboard TUI
 
