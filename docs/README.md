@@ -5,7 +5,7 @@ Guides for installing JobForge, understanding how pieces fit together, and tailo
 | Guide | What it covers |
 |-------|----------------|
 | [SETUP.md](SETUP.md) | Prerequisites, profile and CV, portals copy, `npm run verify`, optional Go dashboard, [troubleshooting](SETUP.md#troubleshooting) |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Modes under `modes/`, single-offer flow, batch runner, tracker and scripts |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Modes under `modes/`, single-offer flow, batch runner, tracker and scripts, [contributor touchpoints](ARCHITECTURE.md#contributing-touchpoints) |
 | [CUSTOMIZATION.md](CUSTOMIZATION.md) | Profile, archetypes in `_shared.md`, `portals.yml`, CV template, canonical states, optional story bank and Claude Code hooks |
 
 ## Checks and automation

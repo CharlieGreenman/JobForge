@@ -64,7 +64,7 @@ For customization (archetypes, weights, tone), start with `_shared.md` and [CUST
 
 1. **Input**: User pastes JD text or URL
 2. **Extract**: Playwright/WebFetch extracts JD from URL
-3. **Classify**: Detect archetype (1 of 6 types)
+3. **Classify**: Detect archetype (one row from the archetype table in `modes/_shared.md`)
 4. **Evaluate**: 6 blocks (A-F):
    - A: Role summary
    - B: CV match (gaps + mitigation)
@@ -136,6 +136,10 @@ From the repo root, `npm run verify` runs `verify-pipeline.mjs`. When a tracker 
 8. Warn when state ids in `templates/states.yml` drift from the script’s built-in fallback list (or when the file exists but ids could not be parsed).
 
 When the tracker file is missing, checks 1–5 and 7 are skipped; checks 6 and 8 still run.
+
+## Contributing touchpoints
+
+Prefer one focused change per pull request: a single mode under `modes/`, one repository-root `.mjs` utility, documentation under `docs/`, fictional samples under [`examples/`](../examples/README.md), templates such as [`templates/portals.example.yml`](../templates/portals.example.yml), the batch flow described in [`batch/README.md`](../batch/README.md), or the Go TUI under `dashboard/` — not a repo-wide refactor across several of those at once. Branch workflow, the verify + dashboard build gate, and starter ideas are in [CONTRIBUTING.md](../CONTRIBUTING.md) (**What to Contribute** and **Development**). To look for in-repo `TODO`, `FIXME`, or `HACK` markers before choosing a task, use the `rg` one-liner in [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations). Upstream PRs should stay generic: do not commit real candidate data (`cv.md`, `config/profile.yml`, personalized `portals.yml`, `data/applications.md`, `reports/`, or similar paths called out in CONTRIBUTING and `.gitignore`).
 
 **PR / maintainer gate:** Before opening a pull request, run `npm run verify` and `npm run build:dashboard` (or `(cd dashboard && go build .)`) from the repo root (same as [CONTRIBUTING.md](../CONTRIBUTING.md#development)). For optional scripted iterations that repeat that gate and commit one small change per pass, see [`scripts/cursor-agent-loop.sh`](../scripts/cursor-agent-loop.sh) (environment variables and usage in the script header; overview in [CONTRIBUTING.md](../CONTRIBUTING.md#optional-scripted-agent-iterations)).
 
