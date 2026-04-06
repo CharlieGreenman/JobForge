@@ -9,7 +9,7 @@
  *
  * Dedup: company normalized + role fuzzy match + report number match
  * If duplicate with higher score → update in-place, update report link
- * Validates status against states.yml (rejects non-canonical, logs warning)
+ * Validates status against templates/states.yml when present (else built-in labels)
  *
  * Run: node merge-tracker.mjs [--dry-run] [--verify]   (from repo root)
  */
@@ -29,8 +29,31 @@ const MERGED_DIR = join(ADDITIONS_DIR, 'merged');
 const DRY_RUN = process.argv.includes('--dry-run');
 const VERIFY = process.argv.includes('--verify');
 
-// Canonical states and aliases
-const CANONICAL_STATES = ['Evaluated', 'Applied', 'Contacted', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
+const STATES_FILE = existsSync(join(PROJECT_DIR, 'templates/states.yml'))
+  ? join(PROJECT_DIR, 'templates/states.yml')
+  : join(PROJECT_DIR, 'states.yml');
+
+/**
+ * Parse templates/states.yml for `label:` values (no YAML dependency).
+ * Returns null if the file is missing or no labels were found.
+ */
+function loadCanonicalLabelsFromStatesYaml(filePath) {
+  if (!existsSync(filePath)) return null;
+  const text = readFileSync(filePath, 'utf-8');
+  const labels = [];
+  for (const line of text.split('\n')) {
+    const m = line.match(/^\s+label:\s*(.+)$/);
+    if (!m) continue;
+    let v = m[1].trim().replace(/^['"]|['"]$/g, '');
+    if (v) labels.push(v);
+  }
+  return labels.length > 0 ? labels : null;
+}
+
+// Canonical display labels (must match tracker / verify-pipeline expectations)
+const CANONICAL_STATES = loadCanonicalLabelsFromStatesYaml(STATES_FILE) || [
+  'Evaluated', 'Applied', 'Contacted', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP',
+];
 
 function validateStatus(status) {
   const clean = status.replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
