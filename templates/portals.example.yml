@@ -399,6 +399,12 @@ tracked_companies:
     notes: "Document database; Atlas vector search and RAG-friendly features."
     enabled: true
 
+  - name: Stripe
+    careers_url: https://job-boards.greenhouse.io/stripe
+    api: https://boards-api.greenhouse.io/v1/boards/stripe/jobs
+    notes: "Payments and financial infra; ML platform, data engineering, and applied science."
+    enabled: true
+
   - name: Datadog
     careers_url: https://job-boards.greenhouse.io/datadog
     api: https://boards-api.greenhouse.io/v1/boards/datadog/jobs
