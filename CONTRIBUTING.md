@@ -68,10 +68,10 @@ cd dashboard && go build -o job-forge-dashboard .
 
 For repeated non-interactive passes that follow the same checks above (explore → small change → `npm run verify` → `cd dashboard && go build .` → commit), see [`scripts/cursor-agent-loop.sh`](scripts/cursor-agent-loop.sh). It expects the Cursor Agent CLI (`agent` on PATH; see [cursor.com/install](https://cursor.com/install)). Environment variables and usage are documented in the script header — same quality gate as a manual PR, without replacing human review of diffs.
 
-To scan for in-repo markers before picking a task:
+To scan for in-repo markers before picking a task (repo root; `.` includes utility scripts at the root and respects `.gitignore`):
 
 ```bash
-rg 'TODO|FIXME|HACK' modes dashboard batch docs scripts --glob '*.mjs' --glob '*.go' --glob '*.md'
+rg 'TODO|FIXME|HACK' . --glob '*.mjs' --glob '*.go' --glob '*.md'
 ```
 
 ## Need Help?
