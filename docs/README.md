@@ -14,7 +14,7 @@ Terminal workflows and PR-style gates are documented across a few files. Use thi
 
 | What you need | Where to read |
 |---------------|---------------|
-| npm script names (`verify`, `merge`, `normalize`, `dedup`, `pdf`, `sync-check`, `build:dashboard`) | [CONTRIBUTING.md — Development](../CONTRIBUTING.md#development) |
+| npm scripts and PR checks (`verify`, `build:dashboard`, `merge`, `normalize`, `dedup`, `pdf`, `sync-check`) | [CONTRIBUTING.md — Development](../CONTRIBUTING.md#development) — includes the `verify` + `build:dashboard` gate (Go on PATH for the dashboard) |
 | What each repository-root `.mjs` utility is for | [ARCHITECTURE.md — Pipeline integrity](ARCHITECTURE.md#pipeline-integrity) |
 | Batch runner, TSV layout, and `batch/tracker-additions/` merge flow | [batch/README.md](../batch/README.md) |
 | Optional scripted iterations (same verify + dashboard build gate as a manual PR) | [scripts/cursor-agent-loop.sh](../scripts/cursor-agent-loop.sh) — usage and env vars in the script header and [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations); verbose JSON output is formatted by [cursor-agent-stream-format.py](../scripts/cursor-agent-stream-format.py) |
@@ -31,5 +31,6 @@ Terminal workflows and PR-style gates are documented across a few files. Use thi
 - [examples/README.md](../examples/README.md) — fictional CV samples and illustrative report layout
 - [interview-prep/story-bank.md](../interview-prep/story-bank.md) — optional STAR+R story bank (grows as you run evaluations)
 - [batch/README.md](../batch/README.md) — batch TSV input, merge step, and runner prerequisites
-- [`data/pipeline.md`](../data/) — inbox of pending offer URLs / local JD paths (create when needed; see [`modes/pipeline.md`](../modes/pipeline.md)); saved JD text often lives under [`jds/`](../jds/) as `local:jds/{file}` (see [jds/README.md](../jds/README.md))
+- [`data/pipeline.md`](../data/) — inbox of pending offer URLs and `local:jds/…` lines (create when needed; see [`modes/pipeline.md`](../modes/pipeline.md))
+- [jds/README.md](../jds/README.md) — markdown job descriptions on disk; the pipeline references them as `local:jds/{filename}.md` from the repo root
 - [scripts/cursor-agent-loop.sh](../scripts/cursor-agent-loop.sh) — optional driver for repeated non-interactive passes; see the **Checks and automation** table above and [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations)
