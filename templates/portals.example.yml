@@ -272,6 +272,11 @@ tracked_companies:
     notes: "GPU cloud and AI infrastructure."
     enabled: true
 
+  - name: Lambda
+    careers_url: https://jobs.ashbyhq.com/lambda
+    notes: "GPU cloud and supercomputing for AI training and inference."
+    enabled: true
+
   - name: Modal
     careers_url: https://jobs.ashbyhq.com/modal
     notes: "Serverless GPUs and Python for ML workloads."

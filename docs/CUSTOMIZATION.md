@@ -82,4 +82,5 @@ The canonical states rarely need changing. If you add new states, update:
 1. `templates/states.yml`
 2. `normalize-statuses.mjs` (alias mappings)
 3. `modes/_shared.md` (any references)
-4. `verify-pipeline.mjs` — extend `CANONICAL_STATUSES` (and `ALIASES` if needed) so the health check stays aligned with `states.yml`; see [Architecture — Pipeline Integrity](ARCHITECTURE.md#pipeline-integrity)
+4. `merge-tracker.mjs` — TSV merges validate the status column against labels in `templates/states.yml`; extend the parser or built-in fallbacks there if you add states before running `npm run merge`; see [batch/README.md](../batch/README.md)
+5. `verify-pipeline.mjs` — extend `CANONICAL_STATUSES` (and `ALIASES` if needed) so the health check stays aligned with `states.yml`; see [Architecture — Pipeline Integrity](ARCHITECTURE.md#pipeline-integrity)
