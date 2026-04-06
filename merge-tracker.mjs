@@ -15,13 +15,14 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, renameSync, existsSync } from 'fs';
-import { join, basename } from 'path';
+import { join, basename, relative } from 'path';
 
 const PROJECT_DIR = new URL('.', import.meta.url).pathname;
 // Support both layouts: data/applications.md (boilerplate) and applications.md (original)
 const APPS_FILE = existsSync(join(PROJECT_DIR, 'data/applications.md'))
   ? join(PROJECT_DIR, 'data/applications.md')
   : join(PROJECT_DIR, 'applications.md');
+const appsDisplay = relative(PROJECT_DIR, APPS_FILE).replace(/\\/g, '/');
 const ADDITIONS_DIR = join(PROJECT_DIR, 'batch/tracker-additions');
 const MERGED_DIR = join(ADDITIONS_DIR, 'merged');
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -174,7 +175,7 @@ function parseTsvContent(content, filename) {
 
 // Read applications.md
 if (!existsSync(APPS_FILE)) {
-  console.log('No applications.md found. Nothing to merge into.');
+  console.log('No tracker file (data/applications.md or applications.md). Nothing to merge into.');
   process.exit(0);
 }
 const appContent = readFileSync(APPS_FILE, 'utf-8');
@@ -196,7 +197,7 @@ console.log(`📊 Existing: ${existingApps.length} entries, max #${maxNum}`);
 
 // Read tracker additions
 if (!existsSync(ADDITIONS_DIR)) {
-  console.log('No tracker-additions directory found.');
+  console.log('No batch/tracker-additions directory found.');
   process.exit(0);
 }
 

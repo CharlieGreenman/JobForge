@@ -16,7 +16,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, relative } from 'path';
 
 const PROJECT_DIR = new URL('.', import.meta.url).pathname;
 // Support both layouts: data/applications.md (boilerplate) and applications.md (original)
@@ -27,6 +27,8 @@ const ADDITIONS_DIR = join(PROJECT_DIR, 'batch/tracker-additions');
 const STATES_FILE = existsSync(join(PROJECT_DIR, 'templates/states.yml'))
   ? join(PROJECT_DIR, 'templates/states.yml')
   : join(PROJECT_DIR, 'states.yml');
+
+const appsDisplay = relative(PROJECT_DIR, APPS_FILE).replace(/\\/g, '/');
 
 const CANONICAL_STATUSES = [
   'evaluated', 'applied', 'contacted', 'responded', 'interview',
@@ -125,8 +127,8 @@ function printPipelineSummaryAndExit() {
 
 // --- Read applications.md ---
 if (!existsSync(APPS_FILE)) {
-  console.log('\n📊 No applications.md found. This is normal for a fresh setup.');
-  console.log('   The file will be created when you evaluate your first offer.\n');
+  console.log('\n📊 No tracker file yet (expected data/applications.md or applications.md).');
+  console.log('   This is normal for a fresh setup; it is created when you evaluate your first offer.\n');
   verifyStatesYamlDrift();
   printPipelineSummaryAndExit();
 }
@@ -147,7 +149,7 @@ for (const line of lines) {
   });
 }
 
-console.log(`\n📊 Checking ${entries.length} entries in applications.md\n`);
+console.log(`\n📊 Checking ${entries.length} entries in ${appsDisplay}\n`);
 
 // --- Check 1: Canonical statuses ---
 let badStatuses = 0;

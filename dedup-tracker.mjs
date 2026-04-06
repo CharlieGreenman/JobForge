@@ -10,13 +10,14 @@
  */
 
 import { readFileSync, writeFileSync, copyFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, relative } from 'path';
 
 const PROJECT_DIR = new URL('.', import.meta.url).pathname;
 // Support both layouts: data/applications.md (boilerplate) and applications.md (original)
 const APPS_FILE = existsSync(join(PROJECT_DIR, 'data/applications.md'))
   ? join(PROJECT_DIR, 'data/applications.md')
   : join(PROJECT_DIR, 'applications.md');
+const appsDisplay = relative(PROJECT_DIR, APPS_FILE).replace(/\\/g, '/');
 const DRY_RUN = process.argv.includes('--dry-run');
 
 // Status advancement order (higher = more advanced in pipeline)
@@ -82,7 +83,7 @@ function parseAppLine(line) {
 
 // Read
 if (!existsSync(APPS_FILE)) {
-  console.log('No applications.md found. Nothing to dedup.');
+  console.log('No tracker file (data/applications.md or applications.md). Nothing to dedup.');
   process.exit(0);
 }
 const content = readFileSync(APPS_FILE, 'utf-8');
@@ -185,7 +186,7 @@ console.log(`\n📊 ${removed} duplicates removed`);
 if (!DRY_RUN && removed > 0) {
   copyFileSync(APPS_FILE, APPS_FILE + '.bak');
   writeFileSync(APPS_FILE, lines.join('\n'));
-  console.log('✅ Written to applications.md (backup: applications.md.bak)');
+  console.log(`✅ Written to ${appsDisplay} (backup: ${appsDisplay}.bak)`);
 } else if (DRY_RUN) {
   console.log('(dry-run — no changes written)');
 } else {
