@@ -6,6 +6,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 |------|---------|
 | [cv-example.md](cv-example.md) | Full CV in markdown — ML / platform engineer profile |
 | [cv-example-backend-engineer.md](cv-example-backend-engineer.md) | Full CV — backend / distributed systems profile |
+| [cv-example-data-engineer.md](cv-example-data-engineer.md) | Full CV — data / analytics engineering profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
 | [sample-report.md](sample-report.md) | Illustrative evaluation report layout |
 
