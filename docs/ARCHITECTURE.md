@@ -34,6 +34,32 @@
                     └──────────────────────┘
 ```
 
+## Modes (`modes/`)
+
+Markdown mode files in `modes/` define how the Claude Code workflow behaves together with the root `CLAUDE.md`. **`_shared.md`** is the shared layer (archetypes, scoring dimensions, negotiation scaffolding); the rest align with `/job-forge` command entry points listed in `CLAUDE.md`.
+
+| File | Focus |
+|------|--------|
+| `_shared.md` | Archetypes, evaluation axes, shared prompts |
+| `auto-pipeline.md` | Default path: evaluate, report, PDF, tracker |
+| `offer.md` | Single-offer analysis |
+| `compare.md` | Comparing multiple offers |
+| `contact.md` | Outreach (e.g. LinkedIn) |
+| `deep.md` | Company research |
+| `pdf.md` | CV / PDF generation |
+| `training.md` | Courses and certifications |
+| `project.md` | Portfolio projects |
+| `tracker.md` | Application tracker review |
+| `apply.md` | Application forms |
+| `scan.md` | Portal / job-board scanning |
+| `pipeline.md` | Pending URL inbox |
+| `batch.md` | Parallel batch runs (`batch/batch-runner.sh`) |
+| `followup.md` | Follow-up triage |
+| `rejection.md` | Rejection handling |
+| `negotiation.md` | Offer negotiation |
+
+For customization (archetypes, weights, tone), start with `_shared.md` and [CUSTOMIZATION.md](CUSTOMIZATION.md).
+
 ## Evaluation Flow (Single Offer)
 
 1. **Input**: User pastes JD text or URL
