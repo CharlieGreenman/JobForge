@@ -15,7 +15,7 @@ Thanks for your interest in contributing! JobForge is built with Claude Code, an
 
 **Good first contributions:**
 - Add companies to `templates/portals.example.yml`
-- Improve documentation
+- Improve documentation (start from the [documentation index](docs/README.md) so new pages land in the right place)
 - Add example CVs for different roles (in `examples/` — see `examples/README.md`)
 - Report bugs via [Issues](https://github.com/CharlieGreenman/JobForge/issues)
 
@@ -78,6 +78,7 @@ rg 'TODO|FIXME|HACK' . --glob '*.mjs' --glob '*.go' --glob '*.md'
 
 ## Need Help?
 
+- [Documentation index](docs/README.md) — map of all guides and related repo paths
 - [Setup guide](docs/SETUP.md) — install, profile, CV, portals, verify
 - [Architecture](docs/ARCHITECTURE.md) — how evaluation, batch, and scripts fit together
 - [Customization](docs/CUSTOMIZATION.md) — profile, archetypes, portals, template, states
