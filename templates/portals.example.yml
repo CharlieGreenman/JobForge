@@ -363,6 +363,12 @@ tracked_companies:
     notes: "Edge network, Workers AI, developer platform."
     enabled: true
 
+  - name: GitLab
+    careers_url: https://job-boards.greenhouse.io/gitlab
+    api: https://boards-api.greenhouse.io/v1/boards/gitlab/jobs
+    notes: "DevSecOps platform; CI/CD, security scanning, remote-first engineering."
+    enabled: true
+
   - name: Linear
     careers_url: https://linear.app/careers
     scan_method: websearch
