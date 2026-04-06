@@ -4,6 +4,7 @@
   "description": "AI-powered job search pipeline built on Claude Code",
   "scripts": {
     "verify": "node verify-pipeline.mjs",
+    "build:dashboard": "cd dashboard && go build .",
     "normalize": "node normalize-statuses.mjs",
     "dedup": "node dedup-tracker.mjs",
     "merge": "node merge-tracker.mjs",

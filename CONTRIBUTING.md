@@ -37,8 +37,10 @@ Before opening a PR, from the repo root:
 
 ```bash
 npm run verify
-(cd dashboard && go build .)
+npm run build:dashboard
 ```
+
+(`npm run build:dashboard` is the same as `(cd dashboard && go build .)` — requires Go on PATH.)
 
 `npm run verify` runs `verify-pipeline.mjs`. It exits successfully when `data/applications.md` is missing (fresh clone).
 
@@ -46,6 +48,7 @@ Other npm scripts:
 
 | Script | Runs | Notes |
 |--------|------|--------|
+| `npm run build:dashboard` | `go build` in `dashboard/` | Optional TUI; same check as manual `cd dashboard && go build .` |
 | `npm run sync-check` | `cv-sync-check.mjs` | Optional setup lint: `cv.md`, `config/profile.yml`, hardcoded-metric scan; fails if those files are missing |
 | `npm run normalize` | `normalize-statuses.mjs` | Maps non-canonical statuses in `data/applications.md`; no-op if the tracker file is missing |
 | `npm run dedup` | `dedup-tracker.mjs` | Merges duplicate company/role rows; no-op if the tracker file is missing |

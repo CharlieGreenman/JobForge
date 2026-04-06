@@ -20,7 +20,7 @@ fi
 #
 # Quality gate (repo root):
 #   npm run verify
-#   (cd dashboard && go build .)
+#   npm run build:dashboard   # same as (cd dashboard && go build .)
 #   verify-pipeline.mjs exits 0 when applications.md is missing (fresh clone); still
 #   run it. Dashboard build requires Go on PATH when touching dashboard/.
 #   Do not require npm run sync-check (cv-sync-check.mjs) in the gate: it expects
@@ -139,7 +139,7 @@ Single iteration — do exactly one cohesive, meaningful slice of work:
 
 4. Run the quality gate from the repo root:
    npm run verify
-   (cd dashboard && go build .)
+   npm run build:dashboard
    If you did not change dashboard/, the go build still must pass — fix any breakage you introduced. If Go is missing from the environment, say so clearly and stop rather than skipping silently.
 
 5. If you made real changes: git add only what belongs to this task, then commit with author and message rules:

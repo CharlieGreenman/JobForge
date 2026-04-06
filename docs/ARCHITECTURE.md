@@ -93,7 +93,7 @@ templates/cv-template.html → PDF generation template
 
 From the repo root, `npm run verify` runs `verify-pipeline.mjs`. That check exits successfully when neither `data/applications.md` nor root `applications.md` exists yet (normal for a new clone). Optional setup validation after you add `cv.md` and `config/profile.yml`: `npm run sync-check` (`cv-sync-check.mjs`).
 
-**PR / maintainer gate:** Before opening a pull request, run `npm run verify` and `(cd dashboard && go build .)` from the repo root (same as [CONTRIBUTING.md](../CONTRIBUTING.md#development)). For optional scripted iterations that repeat that gate and commit one small change per pass, see [`scripts/cursor-agent-loop.sh`](../scripts/cursor-agent-loop.sh) (environment variables and usage in the script header; overview in [CONTRIBUTING.md](../CONTRIBUTING.md#optional-scripted-agent-iterations)).
+**PR / maintainer gate:** Before opening a pull request, run `npm run verify` and `npm run build:dashboard` (or `(cd dashboard && go build .)`) from the repo root (same as [CONTRIBUTING.md](../CONTRIBUTING.md#development)). For optional scripted iterations that repeat that gate and commit one small change per pass, see [`scripts/cursor-agent-loop.sh`](../scripts/cursor-agent-loop.sh) (environment variables and usage in the script header; overview in [CONTRIBUTING.md](../CONTRIBUTING.md#optional-scripted-agent-iterations)).
 
 Scripts maintain data consistency:
 

@@ -102,13 +102,17 @@ go build -o job-forge-dashboard .
 ./job-forge-dashboard -path ..   # repo root is one level up
 ```
 
-From the repo root after building (same quality gate as in [CONTRIBUTING.md](../CONTRIBUTING.md#development)):
+From the repo root, `npm run build:dashboard` runs `go build .` inside `dashboard/` (same as the PR gate in [CONTRIBUTING.md](../CONTRIBUTING.md#development); default binary name is `dashboard` in that folder).
+
+From the repo root after building:
 
 ```bash
-(cd dashboard && go build -o job-forge-dashboard .)
-./dashboard/job-forge-dashboard -path .
+npm run build:dashboard
+./dashboard/dashboard -path .
 ```
+
+To install a named binary under `dashboard/` (optional), use `go build -o job-forge-dashboard .` inside `dashboard/` and run `./dashboard/job-forge-dashboard -path .` instead.
 
 ## Contributing
 
-Pull requests and issue reports are welcome. See [CONTRIBUTING.md](../CONTRIBUTING.md) for branch workflow, ideas (documentation, `examples/`, `templates/portals.example.yml`, dashboard features, utility scripts), and the checks maintainers expect before a PR (`npm run verify` and `cd dashboard && go build .`).
+Pull requests and issue reports are welcome. See [CONTRIBUTING.md](../CONTRIBUTING.md) for branch workflow, ideas (documentation, `examples/`, `templates/portals.example.yml`, dashboard features, utility scripts), and the checks maintainers expect before a PR (`npm run verify` and `npm run build:dashboard`).
