@@ -122,7 +122,7 @@ Create `data/pipeline.md` when you start using the URL inbox (`/job-forge pipeli
 
 ## Pipeline Integrity
 
-From the repo root, `npm run verify` runs `verify-pipeline.mjs`. That check exits successfully when neither `data/applications.md` nor root `applications.md` exists yet (normal for a new clone). Optional setup validation after you add `cv.md` and `config/profile.yml`: `npm run sync-check` (`cv-sync-check.mjs`).
+From the repo root, `npm run verify` runs `verify-pipeline.mjs`. When a tracker file exists, it validates canonical statuses (using `templates/states.yml` when that file is present and parseable), warns on probable duplicate company/role rows, checks that report column markdown links resolve to files in the repo, validates score column format (`X.X/5`, `N/A`, or `DUP`), rejects table rows with too few columns, flags markdown bold inside the score column, and warns if any `batch/tracker-additions/*.tsv` files are still waiting to be merged. It also compares state ids from `templates/states.yml` to an internal fallback list and warns when the two sets drift. **Fresh clone:** the command exits successfully when neither `data/applications.md` nor root `applications.md` exists yet; pending-TSV and states-drift checks still run so contributors see unmerged batch output early. Optional setup validation after you add `cv.md` and `config/profile.yml`: `npm run sync-check` (`cv-sync-check.mjs`).
 
 **PR / maintainer gate:** Before opening a pull request, run `npm run verify` and `npm run build:dashboard` (or `(cd dashboard && go build .)`) from the repo root (same as [CONTRIBUTING.md](../CONTRIBUTING.md#development)). For optional scripted iterations that repeat that gate and commit one small change per pass, see [`scripts/cursor-agent-loop.sh`](../scripts/cursor-agent-loop.sh) (environment variables and usage in the script header; overview in [CONTRIBUTING.md](../CONTRIBUTING.md#optional-scripted-agent-iterations)).
 
@@ -131,7 +131,7 @@ Scripts maintain data consistency:
 | Script | Purpose |
 |--------|---------|
 | `merge-tracker.mjs` | Merges TSV rows from `batch/tracker-additions/` into `data/applications.md`, or root `applications.md` when the `data/` file is absent |
-| `verify-pipeline.mjs` | Health check: statuses, duplicates, report links, pending TSVs |
+| `verify-pipeline.mjs` | Health check — see the `npm run verify` paragraph above |
 | `dedup-tracker.mjs` | Removes duplicate entries by company+role |
 | `normalize-statuses.mjs` | Maps status aliases to canonical values |
 | `generate-pdf.mjs` | Renders HTML to PDF with Playwright/Chromium (`npm run pdf -- <input.html> <output.pdf>`); requires `npx playwright install chromium` |

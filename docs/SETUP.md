@@ -99,7 +99,7 @@ From the repository root, these commands maintain the application tracker and pi
 ## Verify Setup
 
 ```bash
-npm run verify               # Pipeline integrity (same as verify-pipeline.mjs; OK if tracker not created yet)
+npm run verify               # Pipeline integrity (verify-pipeline.mjs). OK if the tracker file does not exist yet; still warns on unmerged batch/tracker-additions/*.tsv — run npm run merge when you intend to fold those rows into the tracker (see [batch/README.md](../batch/README.md))
 npm run sync-check           # Same as node cv-sync-check.mjs — requires cv.md and config/profile.yml
 ```
 
