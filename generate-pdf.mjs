@@ -6,7 +6,7 @@
  * Usage:
  *   node job-forge/generate-pdf.mjs <input.html> <output.pdf> [--format=letter|a4]
  *
- * Requires: @playwright/test (or playwright) installed.
+ * Requires: the `playwright` package (see repo `package.json`; run `npx playwright install chromium`).
  * Uses Chromium headless to render the HTML and produce a clean, ATS-parseable PDF.
  */
 

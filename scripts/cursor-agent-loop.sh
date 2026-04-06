@@ -12,7 +12,7 @@ fi
 # Task selection (humans/agents):
 #   - Read CONTRIBUTING.md ("What to Contribute") and docs/SETUP.md, docs/ARCHITECTURE.md,
 #     docs/CUSTOMIZATION.md for direction.
-#   - Search for open work: rg 'TODO|FIXME|HACK' modes dashboard *.mjs batch docs
+#   - Search for open work (repo root): rg 'TODO|FIXME|HACK' modes dashboard batch docs scripts --glob '*.mjs' --glob '*.go'
 #   - Improve modes/*.md, .mjs utilities, templates/, examples/, or dashboard/ (Go TUI)
 #     in one cohesive slice per iteration.
 #   - Do not commit personal artifacts (cv.md, config/profile.yml, data/applications.md,
@@ -127,7 +127,7 @@ Single iteration — do exactly one cohesive, meaningful slice of work:
 
 2. Decide what to work on. Priority order:
    a) CONTRIBUTING.md "What to Contribute" and obvious gaps in docs or examples.
-   b) Search for concrete hooks: e.g. \`rg 'TODO|FIXME|HACK' modes dashboard *.mjs batch docs\` (adjust paths as needed).
+   b) Search for concrete hooks: e.g. \`rg 'TODO|FIXME|HACK' modes dashboard batch docs scripts --glob '*.mjs' --glob '*.go'\` (repo root; adjust as needed).
    c) One subsystem per iteration: a mode file in modes/, a script (*.mjs), template/example polish, or dashboard (Go) — not a repo-wide refactor.
    d) Self-improve this loop: if scripts/cursor-agent-loop.sh or its header is wrong or missing heuristics, fix it minimally when that is highest leverage.
 
