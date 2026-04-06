@@ -71,7 +71,9 @@ To start with an empty tracker (for example before you paste your first URL), cr
 
 Status values should match [templates/states.yml](../templates/states.yml); see the **States** section in [Customization](CUSTOMIZATION.md). After batch evaluations, run `npm run merge` to pull in `batch/tracker-additions/*.tsv` when your workflow uses those files. For the parallel batch runner that produces those additions, see [batch/README.md](../batch/README.md). If the status column has typos, old labels, or bold markers, run `npm run normalize` to rewrite rows toward the canonical set (use `npm run normalize -- --dry-run` first to preview changes).
 
-## Available Commands
+## Available Commands (Claude Code)
+
+Use these inside a Claude Code session in this repo (see [CLAUDE.md](../CLAUDE.md) for the full mode map):
 
 | Action | How |
 |--------|-----|
@@ -82,6 +84,17 @@ Status values should match [templates/states.yml](../templates/states.yml); see 
 | Batch evaluate | `/job-forge batch` |
 | Check tracker status | `/job-forge tracker` |
 | Fill application form | `/job-forge apply` |
+
+## Tracker and scripts (terminal)
+
+From the repository root, these commands maintain the application tracker and pipeline checks. They do not require Claude Code. `merge`, `normalize`, and `dedup` exit successfully when the tracker file is missing (same as a fresh clone). For optional PDF generation and setup lint, see the script table in [CONTRIBUTING.md](../CONTRIBUTING.md#development).
+
+| Action | Command |
+|--------|---------|
+| Pipeline health check | `npm run verify` |
+| Merge `batch/tracker-additions/*.tsv` into the tracker | `npm run merge` |
+| Map status column to canonical labels | `npm run normalize` (preview with `npm run normalize -- --dry-run`) |
+| Merge duplicate company/role rows | `npm run dedup` |
 
 ## Verify Setup
 
