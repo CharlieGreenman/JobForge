@@ -11,6 +11,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 | [cv-example-mobile-engineer.md](cv-example-mobile-engineer.md) | Full CV — native iOS / Android / mobile profile |
 | [cv-example-devops-engineer.md](cv-example-devops-engineer.md) | Full CV — DevOps / platform / SRE-style profile |
 | [cv-example-product-manager.md](cv-example-product-manager.md) | Full CV — product / platform PM profile |
+| [cv-example-engineering-manager.md](cv-example-engineering-manager.md) | Full CV — engineering management / tech-lead-to-EM profile |
 | [cv-example-security-engineer.md](cv-example-security-engineer.md) | Full CV — application / cloud security engineering profile |
 | [cv-example-qa-engineer.md](cv-example-qa-engineer.md) | Full CV — QA / test automation engineering profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
