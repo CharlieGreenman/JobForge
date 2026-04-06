@@ -29,7 +29,7 @@ Edit `config/profile.yml` with your personal details: name, email, target roles,
 
 Create `cv.md` in the project root with your full CV in markdown format. This is the source of truth for all evaluations and PDFs.
 
-For structure and section ideas, see the fictional samples in [`examples/`](../examples/) (for example `cv-example.md`, `cv-example-backend-engineer.md`, `cv-example-data-engineer.md`, `cv-example-frontend-engineer.md`, `cv-example-devops-engineer.md`, `cv-example-security-engineer.md`, and `cv-example-product-manager.md`).
+For structure and section ideas, see the fictional samples in [`examples/`](../examples/) (for example `cv-example.md`, `cv-example-backend-engineer.md`, `cv-example-data-engineer.md`, `cv-example-frontend-engineer.md`, `cv-example-devops-engineer.md`, `cv-example-security-engineer.md`, `cv-example-qa-engineer.md`, and `cv-example-product-manager.md`).
 
 (Optional) Create `article-digest.md` with proof points from your portfolio projects/articles.
 

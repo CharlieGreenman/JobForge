@@ -11,6 +11,7 @@ Fictional, generic samples you can copy or use as a structural template. Replace
 | [cv-example-devops-engineer.md](cv-example-devops-engineer.md) | Full CV — DevOps / platform / SRE-style profile |
 | [cv-example-product-manager.md](cv-example-product-manager.md) | Full CV — product / platform PM profile |
 | [cv-example-security-engineer.md](cv-example-security-engineer.md) | Full CV — application / cloud security engineering profile |
+| [cv-example-qa-engineer.md](cv-example-qa-engineer.md) | Full CV — QA / test automation engineering profile |
 | [article-digest-example.md](article-digest-example.md) | Optional proof points digest for evaluations |
 | [sample-report.md](sample-report.md) | Illustrative evaluation report layout |
 
