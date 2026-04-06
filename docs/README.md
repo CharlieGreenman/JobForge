@@ -18,6 +18,7 @@ Terminal workflows and PR-style gates are documented across a few files. Use thi
 | What each repository-root `.mjs` utility is for | [ARCHITECTURE.md — Pipeline integrity](ARCHITECTURE.md#pipeline-integrity) |
 | Batch runner, TSV layout, and `batch/tracker-additions/` merge flow | [batch/README.md](../batch/README.md) |
 | Optional scripted iterations (same verify + dashboard build gate as a manual PR) | [scripts/cursor-agent-loop.sh](../scripts/cursor-agent-loop.sh) — usage and env vars in the script header and [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations); verbose JSON output is formatted by [cursor-agent-stream-format.py](../scripts/cursor-agent-stream-format.py) |
+| TODO / FIXME / HACK markers before picking work | [CONTRIBUTING.md — Optional: scripted agent iterations](../CONTRIBUTING.md#optional-scripted-agent-iterations) — `rg` one-liner from the repo root (covers `modes/`, `batch/`, `dashboard/`, `scripts/`, and root `*.mjs`) |
 
 ## Related material (repository root)
 

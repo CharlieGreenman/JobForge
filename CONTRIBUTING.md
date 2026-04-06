@@ -73,8 +73,10 @@ For repeated non-interactive passes that follow the same checks above (explore â
 To scan for in-repo markers before picking a task (repo root; `.` includes utility scripts at the root and respects `.gitignore`):
 
 ```bash
-rg 'TODO|FIXME|HACK' . --glob '*.mjs' --glob '*.go' --glob '*.md'
+rg 'TODO|FIXME|HACK' . --glob '*.mjs' --glob '*.go' --glob '*.md' --glob '*.sh'
 ```
+
+Paths such as `modes/`, `batch/`, `dashboard/`, `docs/`, and `scripts/` are included automatically when you search from the repo root (`.`).
 
 ## Need Help?
 
