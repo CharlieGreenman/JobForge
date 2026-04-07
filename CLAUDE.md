@@ -129,9 +129,9 @@ This system is designed to be customized by YOU (Claude). When the user asks you
 
 **This system is designed for quality, not quantity.** The goal is to help the user find and apply to roles where there is a genuine match -- not to spam companies with mass applications.
 
-- **NEVER submit an application without the user reviewing it first.** Fill forms, draft answers, generate PDFs -- but always STOP before clicking Submit/Send/Apply. The user makes the final call.
-- **Discourage low-fit applications.** If a score is below 3.0/5, explicitly tell the user this is a weak match and recommend skipping unless they have a specific reason.
-- **Quality over speed.** A well-targeted application to 5 companies beats a generic blast to 50. Guide the user toward fewer, better applications.
+- **Continuous pipeline for 3.0+ offers:** When scanning, evaluating, and applying — run the full pipeline end-to-end without pausing for confirmation. Scan → evaluate → fill form → submit for any offer scoring 3.0/5 or above. Do NOT stop between steps to ask "want me to continue?" — just do it.
+- **Auto-submit:** For offers scoring 3.0+/5, fill and submit the application automatically. For offers below 3.0/5, mark as SKIP and move on.
+- **Still respect quality:** Only apply where there is a genuine match (3.0+ ensures this). Auto-SKIP anything below 3.0.
 - **Respect recruiters' time.** Every application a human reads costs someone's attention. Only send what's worth reading.
 
 ---
