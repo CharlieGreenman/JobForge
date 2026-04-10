@@ -686,3 +686,1910 @@ tracked_companies:
     scan_query: 'site:jobs.ashbyhq.com/travelperk'
     notes: "Barcelona. Business travel unicorn."
     enabled: true
+
+  # -- AI Labs & Model Providers (additional) --
+
+  - name: Google DeepMind
+    careers_url: https://careers.google.com
+    scan_method: websearch
+    scan_query: 'site:careers.google.com "DeepMind" OR "Gemini" OR "AI Research" OR "Applied AI"'
+    notes: "Gemini, research, applied AI. London/Mountain View."
+    enabled: true
+
+  - name: Amazon (AWS AI)
+    careers_url: https://amazon.jobs
+    scan_method: websearch
+    scan_query: 'site:amazon.jobs "Bedrock" OR "Titan" OR "AI Engineer" OR "Applied Scientist" OR "Alexa AI"'
+    notes: "Bedrock, Titan models, Alexa AI."
+    enabled: true
+
+  - name: Stability AI
+    careers_url: https://jobs.ashbyhq.com/stability.ai
+    notes: "Open image/video/audio generative models."
+    enabled: true
+
+  - name: AI21 Labs
+    careers_url: https://jobs.ashbyhq.com/ai21
+    notes: "Jamba models, enterprise AI. Tel Aviv + remote."
+    enabled: true
+
+  - name: Character AI
+    careers_url: https://jobs.ashbyhq.com/character
+    notes: "Conversational AI at scale."
+    enabled: true
+
+  - name: Reka AI
+    careers_url: https://jobs.ashbyhq.com/reka
+    notes: "Multimodal foundation models."
+    enabled: true
+
+  - name: Aleph Alpha
+    careers_url: https://job-boards.eu.greenhouse.io/alephalpha
+    api: https://boards-api.greenhouse.io/v1/boards/alephalpha/jobs
+    notes: "Heidelberg. European sovereign AI."
+    enabled: true
+
+  # -- AI Infrastructure & Compute (additional) --
+
+  - name: Cerebras
+    careers_url: https://jobs.ashbyhq.com/cerebras
+    notes: "Wafer-scale AI chips and inference."
+    enabled: true
+
+  - name: SambaNova
+    careers_url: https://job-boards.greenhouse.io/sambanovasystems
+    api: https://boards-api.greenhouse.io/v1/boards/sambanovasystems/jobs
+    notes: "AI hardware + software stack for enterprise."
+    enabled: true
+
+  - name: Modular
+    careers_url: https://jobs.ashbyhq.com/modular
+    notes: "Mojo language and next-gen AI compiler/runtime."
+    enabled: true
+
+  - name: Vast.ai
+    careers_url: https://vast.ai
+    scan_method: websearch
+    scan_query: '"vast.ai" careers OR jobs "engineer" OR "solutions"'
+    notes: "GPU marketplace for AI workloads."
+    enabled: true
+
+  # -- Vector DBs & RAG Infrastructure --
+
+  - name: Weaviate
+    careers_url: https://jobs.ashbyhq.com/weaviate
+    notes: "Open-source vector database. Amsterdam + remote."
+    enabled: true
+
+  - name: Qdrant
+    careers_url: https://qdrant.tech
+    scan_method: websearch
+    scan_query: '"qdrant" careers OR jobs "engineer" OR "solutions"'
+    notes: "Rust-based vector search engine. Berlin + remote."
+    enabled: true
+
+  - name: Chroma
+    careers_url: https://jobs.ashbyhq.com/chroma
+    notes: "Embeddings database for AI apps."
+    enabled: true
+
+  - name: Zilliz
+    careers_url: https://job-boards.greenhouse.io/zilliz
+    api: https://boards-api.greenhouse.io/v1/boards/zilliz/jobs
+    notes: "Enterprise vector DB (Milvus)."
+    enabled: true
+
+  - name: Unstructured
+    careers_url: https://jobs.ashbyhq.com/unstructured
+    notes: "Document parsing and ETL for RAG pipelines."
+    enabled: true
+
+  # -- AI-Native Developer Tools (additional) --
+
+  - name: Replit
+    careers_url: https://jobs.ashbyhq.com/replit
+    notes: "AI-powered coding platform and cloud IDE."
+    enabled: true
+
+  - name: Sourcegraph
+    careers_url: https://job-boards.greenhouse.io/sourcegraph
+    api: https://boards-api.greenhouse.io/v1/boards/sourcegraph/jobs
+    notes: "Cody AI code assistant and code intelligence."
+    enabled: true
+
+  - name: Codeium
+    careers_url: https://jobs.ashbyhq.com/codeium
+    notes: "Windsurf editor. AI code completion and agents."
+    enabled: true
+
+  - name: Tabnine
+    careers_url: https://www.tabnine.com
+    scan_method: websearch
+    scan_query: '"tabnine" careers OR jobs "engineer" OR "AI"'
+    notes: "AI code assistant. Tel Aviv + remote."
+    enabled: true
+
+  - name: Writer
+    careers_url: https://jobs.ashbyhq.com/writer
+    notes: "Enterprise full-stack AI platform for content and workflows."
+    enabled: true
+
+  # -- Data & ML Platform --
+
+  - name: dbt Labs
+    careers_url: https://jobs.ashbyhq.com/dbt-labs
+    notes: "Data transformation standard. Remote-first."
+    enabled: true
+
+  - name: Fivetran
+    careers_url: https://job-boards.greenhouse.io/fivetran
+    api: https://boards-api.greenhouse.io/v1/boards/fivetran/jobs
+    notes: "Automated data integration / ELT."
+    enabled: true
+
+  - name: Airbyte
+    careers_url: https://jobs.ashbyhq.com/airbyte
+    notes: "Open-source data integration platform."
+    enabled: true
+
+  - name: Dagster
+    careers_url: https://jobs.ashbyhq.com/dagster
+    notes: "Data orchestration and asset framework."
+    enabled: true
+
+  - name: Prefect
+    careers_url: https://job-boards.greenhouse.io/prefect
+    api: https://boards-api.greenhouse.io/v1/boards/prefect/jobs
+    notes: "Workflow orchestration for data and ML."
+    enabled: true
+
+  - name: Hex
+    careers_url: https://jobs.ashbyhq.com/hex
+    notes: "Collaborative data notebooks and AI analysis."
+    enabled: true
+
+  - name: Census
+    careers_url: https://job-boards.greenhouse.io/census
+    api: https://boards-api.greenhouse.io/v1/boards/census/jobs
+    notes: "Reverse ETL and data activation."
+    enabled: true
+
+  # -- Developer Platforms (AI-adjacent) --
+
+  - name: HashiCorp
+    careers_url: https://job-boards.greenhouse.io/hashicorp
+    api: https://boards-api.greenhouse.io/v1/boards/hashicorp/jobs
+    notes: "Terraform, Vault, Consul — infrastructure-as-code."
+    enabled: true
+
+  - name: Pulumi
+    careers_url: https://jobs.ashbyhq.com/pulumi
+    notes: "Infrastructure-as-code with real programming languages."
+    enabled: true
+
+  - name: Fly.io
+    careers_url: https://fly.io
+    scan_method: websearch
+    scan_query: '"fly.io" careers OR jobs "engineer" OR "platform"'
+    notes: "Edge application platform. Remote-first."
+    enabled: true
+
+  - name: Render
+    careers_url: https://job-boards.greenhouse.io/render
+    api: https://boards-api.greenhouse.io/v1/boards/render/jobs
+    notes: "Cloud hosting with AI features."
+    enabled: true
+
+  - name: Sentry
+    careers_url: https://job-boards.greenhouse.io/sentry
+    api: https://boards-api.greenhouse.io/v1/boards/sentry/jobs
+    notes: "Error monitoring and performance. AI-powered grouping."
+    enabled: true
+
+  - name: LaunchDarkly
+    careers_url: https://job-boards.greenhouse.io/launchdarkly
+    api: https://boards-api.greenhouse.io/v1/boards/launchdarkly/jobs
+    notes: "Feature flags and AI experimentation platform."
+    enabled: true
+
+  - name: Stytch
+    careers_url: https://jobs.ashbyhq.com/stytch
+    notes: "Auth infrastructure for developers."
+    enabled: true
+
+  - name: WorkOS
+    careers_url: https://jobs.ashbyhq.com/workos
+    notes: "Enterprise auth (SSO, SCIM, directory sync)."
+    enabled: true
+
+  # -- Security (AI-powered) --
+
+  - name: Wiz
+    careers_url: https://jobs.ashbyhq.com/wiz
+    notes: "Cloud security. $12B+ valuation."
+    enabled: true
+
+  - name: Snyk
+    careers_url: https://job-boards.greenhouse.io/snyk
+    api: https://boards-api.greenhouse.io/v1/boards/snyk/jobs
+    notes: "Developer security and AI code scanning."
+    enabled: true
+
+  - name: CrowdStrike
+    careers_url: https://careers.crowdstrike.com
+    scan_method: websearch
+    scan_query: 'site:careers.crowdstrike.com "AI" OR "ML" OR "Solutions Architect" OR "Data Engineer"'
+    notes: "AI-driven endpoint security and threat intelligence."
+    enabled: true
+
+  # -- Fintech (AI-heavy) --
+
+  - name: Plaid
+    careers_url: https://job-boards.greenhouse.io/plaid
+    api: https://boards-api.greenhouse.io/v1/boards/plaid/jobs
+    notes: "Financial data APIs and infrastructure."
+    enabled: true
+
+  - name: Brex
+    careers_url: https://job-boards.greenhouse.io/brex
+    api: https://boards-api.greenhouse.io/v1/boards/brex/jobs
+    notes: "Corporate cards and AI-powered spend management."
+    enabled: true
+
+  - name: Ramp
+    careers_url: https://jobs.ashbyhq.com/ramp
+    notes: "AI-first corporate finance platform."
+    enabled: true
+
+  - name: Mercury
+    careers_url: https://jobs.ashbyhq.com/mercury
+    notes: "Banking for startups. Remote-friendly."
+    enabled: true
+
+  # -- Design & Collaboration (AI features) --
+
+  - name: Figma
+    careers_url: https://job-boards.greenhouse.io/figma
+    api: https://boards-api.greenhouse.io/v1/boards/figma/jobs
+    notes: "Design platform with AI features."
+    enabled: true
+
+  - name: Miro
+    careers_url: https://job-boards.greenhouse.io/miro
+    api: https://boards-api.greenhouse.io/v1/boards/miro/jobs
+    notes: "Visual collaboration with AI. Amsterdam + remote."
+    enabled: true
+
+  - name: Canva
+    careers_url: https://job-boards.greenhouse.io/canva
+    api: https://boards-api.greenhouse.io/v1/boards/canva/jobs
+    notes: "Design platform. Magic AI features. Sydney + remote."
+    enabled: true
+
+  # -- HR & Remote Work Platforms --
+
+  - name: Deel
+    careers_url: https://jobs.ashbyhq.com/deel
+    notes: "Global payroll and compliance. Remote-first."
+    enabled: true
+
+  - name: Rippling
+    careers_url: https://jobs.ashbyhq.com/rippling
+    notes: "HR/IT/Finance platform with AI automation."
+    enabled: true
+
+  # ============================================================
+  # EXTENDED COMPANY LIST (200+ additional companies)
+  # ============================================================
+
+  # -- Big Tech & Major Cloud --
+
+  - name: Apple
+    careers_url: https://jobs.apple.com
+    scan_method: websearch
+    scan_query: 'site:jobs.apple.com "AI" OR "ML" OR "Machine Learning" OR "Siri" OR "Applied Research"'
+    notes: "Apple Intelligence, Siri, on-device ML."
+    enabled: true
+
+  - name: Google
+    careers_url: https://careers.google.com
+    scan_method: websearch
+    scan_query: 'site:careers.google.com "AI" OR "ML" OR "Solutions" OR "Cloud AI" -DeepMind'
+    notes: "Cloud AI, Vertex, TensorFlow, and applied roles."
+    enabled: true
+
+  - name: IBM
+    careers_url: https://careers.ibm.com
+    scan_method: websearch
+    scan_query: 'site:careers.ibm.com "AI" OR "watsonx" OR "Solutions Architect" OR "ML Engineer"'
+    notes: "watsonx, Red Hat, consulting AI."
+    enabled: true
+
+  - name: Intel
+    careers_url: https://jobs.intel.com
+    scan_method: websearch
+    scan_query: 'site:jobs.intel.com "AI" OR "ML" OR "Deep Learning" OR "oneAPI"'
+    notes: "AI accelerators, oneAPI, Habana Labs."
+    enabled: true
+
+  - name: AMD
+    careers_url: https://careers.amd.com
+    scan_method: websearch
+    scan_query: 'site:careers.amd.com "AI" OR "ML" OR "ROCm" OR "Instinct"'
+    notes: "ROCm, MI300 GPUs, AI compute."
+    enabled: true
+
+  - name: Qualcomm
+    careers_url: https://careers.qualcomm.com
+    scan_method: websearch
+    scan_query: 'site:careers.qualcomm.com "AI" OR "ML" OR "Edge AI" OR "On-device"'
+    notes: "On-device AI, Snapdragon, edge inference."
+    enabled: true
+
+  - name: Oracle
+    careers_url: https://careers.oracle.com
+    scan_method: websearch
+    scan_query: 'site:careers.oracle.com "AI" OR "OCI" OR "Cloud Engineer" OR "Solutions Architect"'
+    notes: "OCI GPU cloud, enterprise AI."
+    enabled: true
+
+  - name: SAP AI
+    careers_url: https://jobs.sap.com
+    scan_method: websearch
+    scan_query: 'site:jobs.sap.com "AI" OR "Machine Learning" OR "Joule" OR "Business AI"'
+    notes: "Joule AI assistant, Business AI. Walldorf + global."
+    enabled: true
+
+  - name: Cisco
+    careers_url: https://jobs.cisco.com
+    scan_method: websearch
+    scan_query: 'site:jobs.cisco.com "AI" OR "ML" OR "Solutions Architect" OR "Webex AI"'
+    notes: "Networking AI, Webex AI, security."
+    enabled: true
+
+  - name: Dell Technologies
+    careers_url: https://jobs.dell.com
+    scan_method: websearch
+    scan_query: 'site:jobs.dell.com "AI" OR "ML" OR "Solutions Architect" OR "GenAI"'
+    notes: "AI infrastructure, PowerEdge, enterprise solutions."
+    enabled: true
+
+  - name: HPE
+    careers_url: https://careers.hpe.com
+    scan_method: websearch
+    scan_query: 'site:careers.hpe.com "AI" OR "ML" OR "Supercomputing" OR "GreenLake"'
+    notes: "HPC, Cray, GreenLake AI platform."
+    enabled: true
+
+  - name: DigitalOcean
+    careers_url: https://job-boards.greenhouse.io/digitalocean
+    api: https://boards-api.greenhouse.io/v1/boards/digitalocean/jobs
+    notes: "Developer cloud. GPU droplets and AI workloads."
+    enabled: true
+
+  - name: Akamai
+    careers_url: https://akamaicareers.inflightcloud.com
+    scan_method: websearch
+    scan_query: '"akamai" careers "AI" OR "ML" OR "Cloud" OR "Solutions Architect"'
+    notes: "Edge/CDN + Linode cloud platform."
+    enabled: true
+
+  # -- Autonomous Vehicles & Robotics --
+
+  - name: Waymo
+    careers_url: https://waymo.com/careers
+    scan_method: websearch
+    scan_query: 'site:waymo.com/careers "ML" OR "AI" OR "Perception" OR "Planning"'
+    notes: "Alphabet autonomous driving. Mountain View."
+    enabled: true
+
+  - name: Aurora
+    careers_url: https://aurora.tech/careers
+    scan_method: websearch
+    scan_query: 'site:aurora.tech/careers "ML" OR "AI" OR "Perception" OR "Engineer"'
+    notes: "Self-driving trucks and ride-hailing."
+    enabled: true
+
+  - name: Nuro
+    careers_url: https://job-boards.greenhouse.io/nuro
+    api: https://boards-api.greenhouse.io/v1/boards/nuro/jobs
+    notes: "Autonomous delivery vehicles."
+    enabled: true
+
+  - name: Zoox
+    careers_url: https://jobs.lever.co/zoox
+    notes: "Amazon-owned autonomous vehicles."
+    enabled: true
+
+  - name: Cruise
+    careers_url: https://jobs.lever.co/cruise
+    notes: "GM autonomous vehicles. San Francisco."
+    enabled: true
+
+  - name: Anduril
+    careers_url: https://job-boards.greenhouse.io/anduril
+    api: https://boards-api.greenhouse.io/v1/boards/anduril/jobs
+    notes: "Defense AI and autonomous systems."
+    enabled: true
+
+  - name: Shield AI
+    careers_url: https://job-boards.greenhouse.io/shieldai
+    api: https://boards-api.greenhouse.io/v1/boards/shieldai/jobs
+    notes: "Defense autonomous systems and AI pilots."
+    enabled: true
+
+  - name: Figure AI
+    careers_url: https://job-boards.greenhouse.io/figureai
+    api: https://boards-api.greenhouse.io/v1/boards/figureai/jobs
+    notes: "Humanoid robotics. OpenAI partnership."
+    enabled: true
+
+  - name: Covariant
+    careers_url: https://jobs.lever.co/covariant
+    notes: "AI-powered robotic picking and manipulation."
+    enabled: true
+
+  - name: Boston Dynamics
+    careers_url: https://bostondynamics.wd1.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"boston dynamics" careers "AI" OR "ML" OR "Perception" OR "Robotics"'
+    notes: "Hyundai-owned. Advanced robotics and AI."
+    enabled: true
+
+  # -- Healthcare AI --
+
+  - name: Tempus AI
+    careers_url: https://job-boards.greenhouse.io/tempus
+    api: https://boards-api.greenhouse.io/v1/boards/tempus/jobs
+    notes: "AI for precision medicine. Public company."
+    enabled: true
+
+  - name: PathAI
+    careers_url: https://job-boards.greenhouse.io/pathai
+    api: https://boards-api.greenhouse.io/v1/boards/pathai/jobs
+    notes: "AI-powered pathology diagnostics."
+    enabled: true
+
+  - name: Insitro
+    careers_url: https://jobs.lever.co/insitro
+    notes: "ML for drug discovery."
+    enabled: true
+
+  - name: Recursion
+    careers_url: https://job-boards.greenhouse.io/recursionpharmaceuticals
+    api: https://boards-api.greenhouse.io/v1/boards/recursionpharmaceuticals/jobs
+    notes: "AI/ML drug discovery at scale."
+    enabled: true
+
+  - name: Viz.ai
+    careers_url: https://job-boards.greenhouse.io/vizai
+    api: https://boards-api.greenhouse.io/v1/boards/vizai/jobs
+    notes: "AI-powered care coordination and stroke detection."
+    enabled: true
+
+  - name: Oscar Health
+    careers_url: https://job-boards.greenhouse.io/oscarhealth
+    api: https://boards-api.greenhouse.io/v1/boards/oscarhealth/jobs
+    notes: "Tech-driven health insurance."
+    enabled: true
+
+  - name: Flatiron Health
+    careers_url: https://job-boards.greenhouse.io/flatironhealth
+    api: https://boards-api.greenhouse.io/v1/boards/flatironhealth/jobs
+    notes: "Roche-owned. Oncology data and AI."
+    enabled: true
+
+  - name: Hippocratic AI
+    careers_url: https://jobs.ashbyhq.com/hippocraticai
+    notes: "Safety-focused LLMs for healthcare."
+    enabled: true
+
+  # -- Legal & Compliance AI --
+
+  - name: Casetext (Thomson Reuters)
+    careers_url: https://job-boards.greenhouse.io/casetext
+    api: https://boards-api.greenhouse.io/v1/boards/casetext/jobs
+    notes: "CoCounsel AI legal assistant."
+    enabled: true
+
+  - name: Ironclad
+    careers_url: https://jobs.lever.co/ironcladapp
+    notes: "AI contract management platform."
+    enabled: true
+
+  - name: Docusign
+    careers_url: https://job-boards.greenhouse.io/docusign
+    api: https://boards-api.greenhouse.io/v1/boards/docusign/jobs
+    notes: "E-signature + AI agreement platform."
+    enabled: true
+
+  # -- Enterprise SaaS & Productivity --
+
+  - name: ServiceNow
+    careers_url: https://careers.servicenow.com
+    scan_method: websearch
+    scan_query: 'site:careers.servicenow.com "AI" OR "ML" OR "GenAI" OR "Now Assist"'
+    notes: "Enterprise workflows + Now Assist AI."
+    enabled: true
+
+  - name: Workday
+    careers_url: https://workday.wd5.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"workday" careers "AI" OR "ML" OR "Machine Learning" OR "Applied Scientist"'
+    notes: "HR/Finance enterprise + AI features."
+    enabled: true
+
+  - name: Atlassian
+    careers_url: https://jobs.lever.co/atlassian
+    notes: "Jira, Confluence, Rovo AI assistant. Sydney + remote."
+    enabled: true
+
+  - name: Asana
+    careers_url: https://job-boards.greenhouse.io/asana
+    api: https://boards-api.greenhouse.io/v1/boards/asana/jobs
+    notes: "Work management + AI Studio."
+    enabled: true
+
+  - name: Monday.com
+    careers_url: https://mondaycom.com/careers
+    scan_method: websearch
+    scan_query: 'site:monday.com/careers "AI" OR "ML" OR "Engineer" OR "Solutions"'
+    notes: "Work OS with AI features. Tel Aviv + global."
+    enabled: true
+
+  - name: ClickUp
+    careers_url: https://jobs.ashbyhq.com/clickup
+    notes: "Productivity platform with AI features."
+    enabled: true
+
+  - name: Coda
+    careers_url: https://jobs.lever.co/coda
+    notes: "AI-powered documents and workflows."
+    enabled: true
+
+  - name: HubSpot
+    careers_url: https://job-boards.greenhouse.io/hubspot
+    api: https://boards-api.greenhouse.io/v1/boards/hubspot/jobs
+    notes: "CRM/marketing with AI assistants."
+    enabled: true
+
+  - name: Zendesk
+    careers_url: https://job-boards.greenhouse.io/zendesk
+    api: https://boards-api.greenhouse.io/v1/boards/zendesk/jobs
+    notes: "Customer service + AI agents."
+    enabled: true
+
+  - name: Freshworks
+    careers_url: https://careers.freshworks.com
+    scan_method: websearch
+    scan_query: 'site:careers.freshworks.com "AI" OR "ML" OR "Freddy AI" OR "Solutions"'
+    notes: "CRM/ITSM + Freddy AI. Chennai + global."
+    enabled: true
+
+  - name: Zoom
+    careers_url: https://careers.zoom.us
+    scan_method: websearch
+    scan_query: 'site:careers.zoom.us "AI" OR "ML" OR "AI Companion" OR "Engineer"'
+    notes: "Video comms + AI Companion features."
+    enabled: true
+
+  - name: Slack (Salesforce)
+    careers_url: https://salesforce.wd12.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"slack" "salesforce" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Messaging platform + AI features."
+    enabled: true
+
+  - name: Discord
+    careers_url: https://job-boards.greenhouse.io/discord
+    api: https://boards-api.greenhouse.io/v1/boards/discord/jobs
+    notes: "Community platform + AI moderation/features."
+    enabled: true
+
+  - name: Loom
+    careers_url: https://job-boards.greenhouse.io/loom
+    api: https://boards-api.greenhouse.io/v1/boards/loom/jobs
+    notes: "Atlassian-owned. Video messaging + AI summaries."
+    enabled: true
+
+  # -- E-commerce & Marketplace --
+
+  - name: Shopify
+    careers_url: https://job-boards.greenhouse.io/shopify
+    api: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+    notes: "E-commerce platform + Sidekick AI. Remote."
+    enabled: true
+
+  - name: Instacart
+    careers_url: https://job-boards.greenhouse.io/instacart
+    api: https://boards-api.greenhouse.io/v1/boards/instacart/jobs
+    notes: "Grocery delivery + AI/ML personalization."
+    enabled: true
+
+  - name: DoorDash
+    careers_url: https://job-boards.greenhouse.io/doordash
+    api: https://boards-api.greenhouse.io/v1/boards/doordash/jobs
+    notes: "Delivery logistics + ML optimization."
+    enabled: true
+
+  - name: Etsy
+    careers_url: https://job-boards.greenhouse.io/etsy
+    api: https://boards-api.greenhouse.io/v1/boards/etsy/jobs
+    notes: "Marketplace + AI search and recommendations."
+    enabled: true
+
+  - name: Faire
+    careers_url: https://job-boards.greenhouse.io/faire
+    api: https://boards-api.greenhouse.io/v1/boards/faire/jobs
+    notes: "Wholesale marketplace with ML. Remote-friendly."
+    enabled: true
+
+  - name: Zalando
+    careers_url: https://jobs.zalando.com
+    scan_method: websearch
+    scan_query: 'site:jobs.zalando.com "AI" OR "ML" OR "Data" OR "Platform Engineer"'
+    notes: "Berlin. European fashion e-commerce + AI."
+    enabled: true
+
+  # -- Fintech (extended) --
+
+  - name: Wise
+    careers_url: https://job-boards.greenhouse.io/wise
+    api: https://boards-api.greenhouse.io/v1/boards/wise/jobs
+    notes: "International money transfers. London + Tallinn."
+    enabled: true
+
+  - name: Revolut
+    careers_url: https://jobs.lever.co/revolut
+    notes: "Digital banking. London + global. ML for fraud."
+    enabled: true
+
+  - name: Monzo
+    careers_url: https://monzo.com/careers
+    scan_method: websearch
+    scan_query: 'site:monzo.com/careers "AI" OR "ML" OR "Data" OR "Engineer"'
+    notes: "UK digital bank. ML for fraud and ops."
+    enabled: true
+
+  - name: N26
+    careers_url: https://n26.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:n26.com/careers "AI" OR "ML" OR "Engineer" OR "Data"'
+    notes: "Berlin. European neobank."
+    enabled: true
+
+  - name: Adyen
+    careers_url: https://careers.adyen.com
+    scan_method: websearch
+    scan_query: 'site:careers.adyen.com "AI" OR "ML" OR "Engineer" OR "Platform"'
+    notes: "Amsterdam. Global payments platform."
+    enabled: true
+
+  - name: Checkout.com
+    careers_url: https://job-boards.greenhouse.io/checkout
+    api: https://boards-api.greenhouse.io/v1/boards/checkout/jobs
+    notes: "London. Payment processing + fraud AI."
+    enabled: true
+
+  - name: Affirm
+    careers_url: https://job-boards.greenhouse.io/affirm
+    api: https://boards-api.greenhouse.io/v1/boards/affirm/jobs
+    notes: "BNPL + ML underwriting. Remote."
+    enabled: true
+
+  - name: Robinhood
+    careers_url: https://job-boards.greenhouse.io/robinhood
+    api: https://boards-api.greenhouse.io/v1/boards/robinhood/jobs
+    notes: "Trading platform + ML/AI features."
+    enabled: true
+
+  - name: Coinbase
+    careers_url: https://job-boards.greenhouse.io/coinbase
+    api: https://boards-api.greenhouse.io/v1/boards/coinbase/jobs
+    notes: "Crypto exchange + AI/ML for compliance and trading."
+    enabled: true
+
+  - name: Square (Block)
+    careers_url: https://jobs.smartrecruiters.com/Square
+    scan_method: websearch
+    scan_query: '"block" OR "square" careers "AI" OR "ML" OR "Machine Learning"'
+    notes: "Block (Square, Cash App). Payments + ML."
+    enabled: true
+
+  # -- Cybersecurity (extended) --
+
+  - name: Palo Alto Networks
+    careers_url: https://jobs.paloaltonetworks.com
+    scan_method: websearch
+    scan_query: 'site:jobs.paloaltonetworks.com "AI" OR "ML" OR "Solutions Architect" OR "Cortex"'
+    notes: "Network security + Cortex AI/ML."
+    enabled: true
+
+  - name: Fortinet
+    careers_url: https://edel.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001
+    scan_method: websearch
+    scan_query: '"fortinet" careers "AI" OR "ML" OR "Solutions Architect"'
+    notes: "Network security + FortiAI."
+    enabled: true
+
+  - name: Zscaler
+    careers_url: https://job-boards.greenhouse.io/zscaler
+    api: https://boards-api.greenhouse.io/v1/boards/zscaler/jobs
+    notes: "Zero-trust cloud security + AI."
+    enabled: true
+
+  - name: SentinelOne
+    careers_url: https://job-boards.greenhouse.io/sentinelone
+    api: https://boards-api.greenhouse.io/v1/boards/sentinelone/jobs
+    notes: "AI-powered endpoint and cloud security."
+    enabled: true
+
+  - name: Lacework
+    careers_url: https://job-boards.greenhouse.io/lacework
+    api: https://boards-api.greenhouse.io/v1/boards/lacework/jobs
+    notes: "Cloud security + ML anomaly detection."
+    enabled: true
+
+  - name: Okta
+    careers_url: https://job-boards.greenhouse.io/okta
+    api: https://boards-api.greenhouse.io/v1/boards/okta/jobs
+    notes: "Identity and access management. AI threat detection."
+    enabled: true
+
+  - name: 1Password
+    careers_url: https://jobs.lever.co/1password
+    notes: "Password management + enterprise security."
+    enabled: true
+
+  - name: Cybereason
+    careers_url: https://job-boards.greenhouse.io/cybereason
+    api: https://boards-api.greenhouse.io/v1/boards/cybereason/jobs
+    notes: "AI-driven XDR security platform."
+    enabled: true
+
+  - name: Darktrace
+    careers_url: https://darktrace.com/careers
+    scan_method: websearch
+    scan_query: 'site:darktrace.com/careers "AI" OR "ML" OR "Engineer" OR "Solutions"'
+    notes: "Cambridge UK. AI cybersecurity (self-learning)."
+    enabled: true
+
+  # -- DevOps, CI/CD & Infrastructure --
+
+  - name: JFrog
+    careers_url: https://job-boards.greenhouse.io/jfrog
+    api: https://boards-api.greenhouse.io/v1/boards/jfrog/jobs
+    notes: "DevOps platform, Artifactory, ML model registry."
+    enabled: true
+
+  - name: CircleCI
+    careers_url: https://job-boards.greenhouse.io/circleci
+    api: https://boards-api.greenhouse.io/v1/boards/circleci/jobs
+    notes: "CI/CD platform."
+    enabled: true
+
+  - name: Buildkite
+    careers_url: https://buildkite.com/careers
+    scan_method: websearch
+    scan_query: '"buildkite" careers "engineer" OR "solutions" OR "platform"'
+    notes: "CI/CD for scale. Remote-first."
+    enabled: true
+
+  - name: Kong
+    careers_url: https://job-boards.greenhouse.io/kong
+    api: https://boards-api.greenhouse.io/v1/boards/kong/jobs
+    notes: "API gateway and service mesh + AI Gateway."
+    enabled: true
+
+  - name: Postman
+    careers_url: https://job-boards.greenhouse.io/postman
+    api: https://boards-api.greenhouse.io/v1/boards/postman/jobs
+    notes: "API development platform."
+    enabled: true
+
+  - name: Fastly
+    careers_url: https://job-boards.greenhouse.io/fastly
+    api: https://boards-api.greenhouse.io/v1/boards/fastly/jobs
+    notes: "Edge cloud platform + AI at the edge."
+    enabled: true
+
+  - name: Netlify
+    careers_url: https://job-boards.greenhouse.io/netlify
+    api: https://boards-api.greenhouse.io/v1/boards/netlify/jobs
+    notes: "Web deployment platform. Remote-first."
+    enabled: true
+
+  - name: Docker
+    careers_url: https://job-boards.greenhouse.io/docker
+    api: https://boards-api.greenhouse.io/v1/boards/docker/jobs
+    notes: "Container platform + AI developer tools."
+    enabled: true
+
+  - name: Grafbase
+    careers_url: https://grafbase.com
+    scan_method: websearch
+    scan_query: '"grafbase" careers OR jobs "engineer"'
+    notes: "Federated GraphQL platform. Remote EU."
+    enabled: true
+
+  - name: GitGuardian
+    careers_url: https://job-boards.greenhouse.io/gitguardian
+    api: https://boards-api.greenhouse.io/v1/boards/gitguardian/jobs
+    notes: "Paris. Secrets detection in code."
+    enabled: true
+
+  # -- Data Analytics & BI --
+
+  - name: ThoughtSpot
+    careers_url: https://job-boards.greenhouse.io/thoughtspot
+    api: https://boards-api.greenhouse.io/v1/boards/thoughtspot/jobs
+    notes: "AI-powered analytics and search."
+    enabled: true
+
+  - name: Amplitude
+    careers_url: https://job-boards.greenhouse.io/amplitude
+    api: https://boards-api.greenhouse.io/v1/boards/amplitude/jobs
+    notes: "Product analytics + AI insights."
+    enabled: true
+
+  - name: Mixpanel
+    careers_url: https://job-boards.greenhouse.io/mixpanel
+    api: https://boards-api.greenhouse.io/v1/boards/mixpanel/jobs
+    notes: "Product analytics."
+    enabled: true
+
+  - name: Segment (Twilio)
+    careers_url: https://job-boards.greenhouse.io/segment
+    api: https://boards-api.greenhouse.io/v1/boards/segment/jobs
+    notes: "Customer data platform."
+    enabled: true
+
+  - name: Heap
+    careers_url: https://job-boards.greenhouse.io/heap
+    api: https://boards-api.greenhouse.io/v1/boards/heap/jobs
+    notes: "Contentsquare-owned. Auto-capture analytics."
+    enabled: true
+
+  - name: Metabase
+    careers_url: https://jobs.ashbyhq.com/metabase
+    notes: "Open-source BI and analytics."
+    enabled: true
+
+  - name: Preset (Superset)
+    careers_url: https://job-boards.greenhouse.io/preset
+    api: https://boards-api.greenhouse.io/v1/boards/preset/jobs
+    notes: "Managed Apache Superset. Open-source BI."
+    enabled: true
+
+  - name: Observable
+    careers_url: https://job-boards.greenhouse.io/observable
+    api: https://boards-api.greenhouse.io/v1/boards/observable/jobs
+    notes: "Data visualization and Observable Framework."
+    enabled: true
+
+  - name: Hightouch
+    careers_url: https://job-boards.greenhouse.io/hightouch
+    api: https://boards-api.greenhouse.io/v1/boards/hightouch/jobs
+    notes: "Composable CDP and reverse ETL."
+    enabled: true
+
+  # -- AI for Sales, Marketing & RevOps --
+
+  - name: Clay
+    careers_url: https://jobs.ashbyhq.com/clay
+    notes: "AI data enrichment + outbound automation."
+    enabled: true
+
+  - name: Apollo.io
+    careers_url: https://job-boards.greenhouse.io/apolloio
+    api: https://boards-api.greenhouse.io/v1/boards/apolloio/jobs
+    notes: "Sales intelligence + AI sequences."
+    enabled: true
+
+  - name: Outreach
+    careers_url: https://job-boards.greenhouse.io/outreach
+    api: https://boards-api.greenhouse.io/v1/boards/outreach/jobs
+    notes: "Sales engagement + AI assistant."
+    enabled: true
+
+  - name: Jasper
+    careers_url: https://job-boards.greenhouse.io/jasper
+    api: https://boards-api.greenhouse.io/v1/boards/jasper/jobs
+    notes: "AI marketing content platform."
+    enabled: true
+
+  - name: Copy.ai
+    careers_url: https://jobs.ashbyhq.com/copy-ai
+    notes: "AI GTM workflows and content."
+    enabled: true
+
+  - name: Salesloft
+    careers_url: https://job-boards.greenhouse.io/salesloft
+    api: https://boards-api.greenhouse.io/v1/boards/salesloft/jobs
+    notes: "Sales engagement + AI. Vista-owned."
+    enabled: true
+
+  - name: ZoomInfo
+    careers_url: https://job-boards.greenhouse.io/zoominfo
+    api: https://boards-api.greenhouse.io/v1/boards/zoominfo/jobs
+    notes: "B2B data intelligence + AI."
+    enabled: true
+
+  - name: Clari
+    careers_url: https://job-boards.greenhouse.io/clari
+    api: https://boards-api.greenhouse.io/v1/boards/clari/jobs
+    notes: "Revenue intelligence + AI forecasting."
+    enabled: true
+
+  - name: 6sense
+    careers_url: https://job-boards.greenhouse.io/6sense
+    api: https://boards-api.greenhouse.io/v1/boards/6sense/jobs
+    notes: "AI-powered ABM and revenue intelligence."
+    enabled: true
+
+  # -- AI Agents & Workflow Automation (extended) --
+
+  - name: Relevance AI
+    careers_url: https://jobs.ashbyhq.com/relevanceai
+    notes: "AI workforce / agent building platform."
+    enabled: true
+
+  - name: Fixie AI
+    careers_url: https://jobs.ashbyhq.com/fixie
+    notes: "AI agent infrastructure and tools."
+    enabled: true
+
+  - name: Dust
+    careers_url: https://jobs.ashbyhq.com/dust
+    notes: "Paris. AI agent platform for enterprises."
+    enabled: true
+
+  - name: Moveworks
+    careers_url: https://job-boards.greenhouse.io/moveworks
+    api: https://boards-api.greenhouse.io/v1/boards/moveworks/jobs
+    notes: "Enterprise AI copilot for IT/HR/Finance."
+    enabled: true
+
+  - name: Adept AI
+    careers_url: https://jobs.ashbyhq.com/adept
+    notes: "AI agents that use software like humans."
+    enabled: true
+
+  - name: Voiceflow
+    careers_url: https://jobs.ashbyhq.com/voiceflow
+    notes: "Conversational AI agent builder. Toronto."
+    enabled: true
+
+  - name: Tray.io
+    careers_url: https://job-boards.greenhouse.io/tray
+    api: https://boards-api.greenhouse.io/v1/boards/tray/jobs
+    notes: "Enterprise automation platform + AI."
+    enabled: true
+
+  - name: Workato
+    careers_url: https://job-boards.greenhouse.io/workato
+    api: https://boards-api.greenhouse.io/v1/boards/workato/jobs
+    notes: "Enterprise integration + AI automation."
+    enabled: true
+
+  # -- Cloud-Native & Kubernetes --
+
+  - name: Confluent Cloud
+    careers_url: https://jobs.ashbyhq.com/confluent
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Red Hat
+    careers_url: https://careers-redhat.icims.com
+    scan_method: websearch
+    scan_query: '"red hat" careers "AI" OR "OpenShift AI" OR "Solutions Architect"'
+    notes: "IBM-owned. OpenShift AI, Ansible, RHEL."
+    enabled: true
+
+  - name: SUSE
+    careers_url: https://www.suse.com/careers
+    scan_method: websearch
+    scan_query: 'site:suse.com/careers "AI" OR "ML" OR "Kubernetes" OR "Solutions"'
+    notes: "Enterprise Linux and K8s. Nuremberg + remote."
+    enabled: true
+
+  - name: Canonical
+    careers_url: https://canonical.com/careers
+    scan_method: websearch
+    scan_query: 'site:canonical.com/careers "AI" OR "ML" OR "Solutions" OR "Engineer"'
+    notes: "Ubuntu, Juju, MAAS. Remote-first."
+    enabled: true
+
+  - name: Isovalent (Cisco)
+    careers_url: https://job-boards.greenhouse.io/isovalent
+    api: https://boards-api.greenhouse.io/v1/boards/isovalent/jobs
+    notes: "eBPF and Cilium networking. Cisco-acquired."
+    enabled: true
+
+  # -- EdTech & Learning --
+
+  - name: Duolingo
+    careers_url: https://job-boards.greenhouse.io/duolingo
+    api: https://boards-api.greenhouse.io/v1/boards/duolingo/jobs
+    notes: "Language learning + AI (Birdbrain). Pittsburgh."
+    enabled: true
+
+  - name: Coursera
+    careers_url: https://job-boards.greenhouse.io/coursera
+    api: https://boards-api.greenhouse.io/v1/boards/coursera/jobs
+    notes: "Online learning platform + AI features."
+    enabled: true
+
+  - name: Khan Academy
+    careers_url: https://job-boards.greenhouse.io/khanacademy
+    api: https://boards-api.greenhouse.io/v1/boards/khanacademy/jobs
+    notes: "Khanmigo AI tutor (OpenAI-powered)."
+    enabled: true
+
+  - name: Chegg
+    careers_url: https://job-boards.greenhouse.io/chegg
+    api: https://boards-api.greenhouse.io/v1/boards/chegg/jobs
+    notes: "Education platform + AI study tools."
+    enabled: true
+
+  # -- Gaming & Creative AI --
+
+  - name: Unity
+    careers_url: https://job-boards.greenhouse.io/unitytechnologies
+    api: https://boards-api.greenhouse.io/v1/boards/unitytechnologies/jobs
+    notes: "Game engine + AI/ML tools (Muse, Sentis)."
+    enabled: true
+
+  - name: Epic Games
+    careers_url: https://job-boards.greenhouse.io/epicgames
+    api: https://boards-api.greenhouse.io/v1/boards/epicgames/jobs
+    notes: "Unreal Engine + AI features."
+    enabled: true
+
+  - name: Roblox
+    careers_url: https://job-boards.greenhouse.io/roblox
+    api: https://boards-api.greenhouse.io/v1/boards/roblox/jobs
+    notes: "Gaming platform + generative AI for creation."
+    enabled: true
+
+  - name: Runway
+    careers_url: https://job-boards.greenhouse.io/runwayml
+    api: https://boards-api.greenhouse.io/v1/boards/runwayml/jobs
+    notes: "AI video generation and creative tools."
+    enabled: true
+
+  - name: Midjourney
+    careers_url: https://midjourney.com
+    scan_method: websearch
+    scan_query: '"midjourney" careers OR jobs OR hiring "engineer"'
+    notes: "AI image generation. Small team."
+    enabled: true
+
+  - name: Pika
+    careers_url: https://jobs.ashbyhq.com/pika
+    notes: "AI video generation."
+    enabled: true
+
+  - name: Luma AI
+    careers_url: https://jobs.ashbyhq.com/lumalabs
+    notes: "3D capture and generation with AI."
+    enabled: true
+
+  # -- Climate & Energy Tech --
+
+  - name: Climavision
+    careers_url: https://job-boards.greenhouse.io/climavision
+    api: https://boards-api.greenhouse.io/v1/boards/climavision/jobs
+    notes: "AI weather forecasting and climate data."
+    enabled: true
+
+  - name: Watershed
+    careers_url: https://job-boards.greenhouse.io/watershed
+    api: https://boards-api.greenhouse.io/v1/boards/watershed/jobs
+    notes: "Enterprise carbon management platform."
+    enabled: true
+
+  - name: Arcadia
+    careers_url: https://job-boards.greenhouse.io/arcadia
+    api: https://boards-api.greenhouse.io/v1/boards/arcadia/jobs
+    notes: "Energy data and decarbonization platform."
+    enabled: true
+
+  # -- Supply Chain & Logistics --
+
+  - name: Flexport
+    careers_url: https://job-boards.greenhouse.io/flexport
+    api: https://boards-api.greenhouse.io/v1/boards/flexport/jobs
+    notes: "Global logistics + AI optimization."
+    enabled: true
+
+  - name: project44
+    careers_url: https://job-boards.greenhouse.io/project44
+    api: https://boards-api.greenhouse.io/v1/boards/project44/jobs
+    notes: "Supply chain visibility + ML."
+    enabled: true
+
+  - name: FourKites
+    careers_url: https://job-boards.greenhouse.io/fourkites
+    api: https://boards-api.greenhouse.io/v1/boards/fourkites/jobs
+    notes: "Real-time supply chain visibility."
+    enabled: true
+
+  # -- Real Estate & PropTech --
+
+  - name: Opendoor
+    careers_url: https://job-boards.greenhouse.io/opendoor
+    api: https://boards-api.greenhouse.io/v1/boards/opendoor/jobs
+    notes: "iBuying + ML pricing models."
+    enabled: true
+
+  - name: Zillow
+    careers_url: https://zillow.wd5.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"zillow" careers "AI" OR "ML" OR "Data Science" OR "Engineer"'
+    notes: "Real estate + Zestimate ML."
+    enabled: true
+
+  # -- Telecom & Connectivity --
+
+  - name: Starlink (SpaceX)
+    careers_url: https://www.spacex.com/careers
+    scan_method: websearch
+    scan_query: 'site:spacex.com/careers "AI" OR "ML" OR "Software" OR "Starlink"'
+    notes: "Satellite internet. Hawthorne CA."
+    enabled: true
+
+  # -- Music & Audio AI --
+
+  - name: Spotify
+    careers_url: https://jobs.lever.co/spotify
+    notes: "Music streaming + ML recommendations and AI DJ."
+    enabled: true
+
+  - name: SoundHound
+    careers_url: https://job-boards.greenhouse.io/soundhoundinc
+    api: https://boards-api.greenhouse.io/v1/boards/soundhoundinc/jobs
+    notes: "Voice AI and conversational intelligence."
+    enabled: true
+
+  - name: AssemblyAI
+    careers_url: https://jobs.ashbyhq.com/assemblyai
+    notes: "Speech-to-text and audio AI APIs."
+    enabled: true
+
+  # -- Travel & Mobility --
+
+  - name: Airbnb
+    careers_url: https://job-boards.greenhouse.io/airbnb
+    api: https://boards-api.greenhouse.io/v1/boards/airbnb/jobs
+    notes: "Travel marketplace + ML/AI features."
+    enabled: true
+
+  - name: Uber
+    careers_url: https://uber.wd5.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"uber" careers "AI" OR "ML" OR "Machine Learning" OR "Applied Scientist"'
+    notes: "Ride-hailing/delivery + massive ML platform."
+    enabled: true
+
+  - name: Lyft
+    careers_url: https://job-boards.greenhouse.io/lyft
+    api: https://boards-api.greenhouse.io/v1/boards/lyft/jobs
+    notes: "Ride-hailing + ML optimization."
+    enabled: true
+
+  - name: Booking.com
+    careers_url: https://careers.booking.com
+    scan_method: websearch
+    scan_query: 'site:careers.booking.com "AI" OR "ML" OR "Data Science" OR "Engineer"'
+    notes: "Amsterdam. Travel + ML at scale."
+    enabled: true
+
+  # -- Insurance & RegTech --
+
+  - name: Lemonade
+    careers_url: https://job-boards.greenhouse.io/lemonade
+    api: https://boards-api.greenhouse.io/v1/boards/lemonade/jobs
+    notes: "AI-first insurance."
+    enabled: true
+
+  - name: Tractable
+    careers_url: https://job-boards.greenhouse.io/tractable
+    api: https://boards-api.greenhouse.io/v1/boards/tractable/jobs
+    notes: "London. AI for auto claims and damage assessment."
+    enabled: true
+
+  # -- Communication Platforms --
+
+  - name: Vonage (Ericsson)
+    careers_url: https://job-boards.greenhouse.io/vonage
+    api: https://boards-api.greenhouse.io/v1/boards/vonage/jobs
+    notes: "CPaaS + AI voice and messaging."
+    enabled: true
+
+  - name: MessageBird
+    careers_url: https://job-boards.greenhouse.io/messagebird
+    api: https://boards-api.greenhouse.io/v1/boards/messagebird/jobs
+    notes: "Amsterdam. Omnichannel comms + AI."
+    enabled: true
+
+  - name: Sinch
+    careers_url: https://sinch.com/careers
+    scan_method: websearch
+    scan_query: '"sinch" careers "AI" OR "Engineer" OR "Solutions"'
+    notes: "Stockholm. CPaaS and messaging + AI."
+    enabled: true
+
+  # -- Observability & Monitoring (extended) --
+
+  - name: New Relic
+    careers_url: https://job-boards.greenhouse.io/newrelic
+    api: https://boards-api.greenhouse.io/v1/boards/newrelic/jobs
+    notes: "Full-stack observability + AI insights."
+    enabled: true
+
+  - name: Splunk (Cisco)
+    careers_url: https://jobs.jobvite.com/splunk-careers
+    scan_method: websearch
+    scan_query: '"splunk" careers "AI" OR "ML" OR "Solutions" OR "Engineer"'
+    notes: "Cisco-owned. SIEM, observability, AI assistants."
+    enabled: true
+
+  - name: Chronosphere
+    careers_url: https://job-boards.greenhouse.io/chronosphere
+    api: https://boards-api.greenhouse.io/v1/boards/chronosphere/jobs
+    notes: "Cloud-native observability."
+    enabled: true
+
+  - name: Honeycomb
+    careers_url: https://job-boards.greenhouse.io/honeycomb
+    api: https://boards-api.greenhouse.io/v1/boards/honeycomb/jobs
+    notes: "Observability + AI query assistant."
+    enabled: true
+
+  # -- Database & Data Infrastructure (extended) --
+
+  - name: CockroachDB
+    careers_url: https://job-boards.greenhouse.io/cockroachlabs
+    api: https://boards-api.greenhouse.io/v1/boards/cockroachlabs/jobs
+    notes: "Distributed SQL database."
+    enabled: true
+
+  - name: SingleStore
+    careers_url: https://job-boards.greenhouse.io/singlestore
+    api: https://boards-api.greenhouse.io/v1/boards/singlestore/jobs
+    notes: "Real-time unified database for AI/analytics."
+    enabled: true
+
+  - name: ClickHouse
+    careers_url: https://job-boards.greenhouse.io/clickhouse
+    api: https://boards-api.greenhouse.io/v1/boards/clickhouse/jobs
+    notes: "Column-oriented OLAP database."
+    enabled: true
+
+  - name: TimescaleDB
+    careers_url: https://job-boards.greenhouse.io/timescale
+    api: https://boards-api.greenhouse.io/v1/boards/timescale/jobs
+    notes: "Time-series database on Postgres."
+    enabled: true
+
+  - name: StarRocks
+    careers_url: https://jobs.ashbyhq.com/starrocks
+    notes: "Real-time analytics database."
+    enabled: true
+
+  - name: Motherduck
+    careers_url: https://jobs.ashbyhq.com/motherduck
+    notes: "Serverless DuckDB analytics."
+    enabled: true
+
+  - name: Turso
+    careers_url: https://jobs.ashbyhq.com/turso
+    notes: "Edge SQLite (libSQL) database."
+    enabled: true
+
+  # -- AI Coding & Code Gen (extended) --
+
+  - name: Augment Code
+    careers_url: https://jobs.ashbyhq.com/augmentcode
+    notes: "AI coding assistant for enterprise."
+    enabled: true
+
+  - name: Magic AI
+    careers_url: https://jobs.ashbyhq.com/magic
+    notes: "Long-context AI coding. LTM-2 model."
+    enabled: true
+
+  - name: Poolside
+    careers_url: https://jobs.ashbyhq.com/poolside
+    notes: "Code generation foundation models."
+    enabled: true
+
+  - name: Cognition (Devin)
+    careers_url: https://jobs.ashbyhq.com/cognition
+    notes: "Devin AI software engineer."
+    enabled: true
+
+  - name: Factory AI
+    careers_url: https://jobs.ashbyhq.com/factory
+    notes: "Autonomous coding agents (Droids)."
+    enabled: true
+
+  # -- AI Search & Knowledge --
+
+  - name: You.com
+    careers_url: https://jobs.ashbyhq.com/you
+    notes: "AI search and productivity agents."
+    enabled: true
+
+  - name: Hebbia
+    careers_url: https://jobs.ashbyhq.com/hebbia
+    notes: "AI knowledge work for finance/legal."
+    enabled: true
+
+  - name: Vectara
+    careers_url: https://jobs.ashbyhq.com/vectara
+    notes: "RAG-as-a-service platform."
+    enabled: true
+
+  - name: Coactive AI
+    careers_url: https://jobs.ashbyhq.com/coactive-ai
+    notes: "Multimodal AI for unstructured data."
+    enabled: true
+
+  # -- Developer Experience & API --
+
+  - name: Twitch
+    careers_url: https://job-boards.greenhouse.io/twitch
+    api: https://boards-api.greenhouse.io/v1/boards/twitch/jobs
+    notes: "Amazon-owned. Streaming platform + ML."
+    enabled: true
+
+  - name: Snyk (Developer Security)
+    careers_url: https://job-boards.greenhouse.io/snyk
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Doppler
+    careers_url: https://jobs.ashbyhq.com/doppler
+    notes: "Secrets management for developers."
+    enabled: true
+
+  - name: Resend
+    careers_url: https://jobs.ashbyhq.com/resend
+    notes: "Developer email API. YC-backed."
+    enabled: true
+
+  - name: Inngest
+    careers_url: https://jobs.ashbyhq.com/inngest
+    notes: "Event-driven durable functions."
+    enabled: true
+
+  - name: Trigger.dev
+    careers_url: https://jobs.ashbyhq.com/trigger-dev
+    notes: "Background jobs for serverless."
+    enabled: true
+
+  - name: Nango
+    careers_url: https://jobs.ashbyhq.com/nango
+    notes: "Unified API for integrations."
+    enabled: true
+
+  - name: Svix
+    careers_url: https://jobs.ashbyhq.com/svix
+    notes: "Webhooks-as-a-service."
+    enabled: true
+
+  # -- European Tech (extended) --
+
+  - name: Klarna
+    careers_url: https://jobs.lever.co/klarna
+    notes: "Stockholm. BNPL + AI shopping assistant."
+    enabled: true
+
+  - name: Spotify (Engineering)
+    careers_url: https://jobs.lever.co/spotify
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: BlaBlaCar
+    careers_url: https://jobs.lever.co/blablacar
+    notes: "Paris. Carpooling + ML."
+    enabled: true
+
+  - name: Doctolib
+    careers_url: https://careers.doctolib.com
+    scan_method: websearch
+    scan_query: '"doctolib" careers "AI" OR "ML" OR "Engineer" OR "Data"'
+    notes: "Paris/Berlin. Healthcare booking + AI."
+    enabled: true
+
+  - name: Pitch
+    careers_url: https://jobs.ashbyhq.com/pitch
+    notes: "Berlin. Presentation software."
+    enabled: true
+
+  - name: ContentSquare
+    careers_url: https://job-boards.greenhouse.io/contentsquare
+    api: https://boards-api.greenhouse.io/v1/boards/contentsquare/jobs
+    notes: "Paris. Digital experience analytics + AI."
+    enabled: true
+
+  - name: Dataiku
+    careers_url: https://job-boards.greenhouse.io/dataiku
+    api: https://boards-api.greenhouse.io/v1/boards/dataiku/jobs
+    notes: "Paris/NYC. Enterprise AI platform."
+    enabled: true
+
+  - name: Algolia
+    careers_url: https://job-boards.greenhouse.io/algolia
+    api: https://boards-api.greenhouse.io/v1/boards/algolia/jobs
+    notes: "Paris. AI-powered search and recommendations."
+    enabled: true
+
+  - name: Snorkel AI
+    careers_url: https://job-boards.greenhouse.io/snorkelai
+    api: https://boards-api.greenhouse.io/v1/boards/snorkelai/jobs
+    notes: "Data-centric AI and labeling platform."
+    enabled: true
+
+  - name: Collibra
+    careers_url: https://job-boards.greenhouse.io/collibra
+    api: https://boards-api.greenhouse.io/v1/boards/collibra/jobs
+    notes: "Brussels. Data intelligence + AI governance."
+    enabled: true
+
+  - name: MessageBird (Bird)
+    careers_url: https://job-boards.greenhouse.io/messagebird
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Personio
+    careers_url: https://job-boards.greenhouse.io/personio
+    api: https://boards-api.greenhouse.io/v1/boards/personio/jobs
+    notes: "Munich. European HR platform."
+    enabled: true
+
+  - name: Celonis
+    careers_url: https://job-boards.greenhouse.io/celonis
+    api: https://boards-api.greenhouse.io/v1/boards/celonis/jobs
+    notes: "Munich. Process mining + AI."
+    enabled: true
+
+  - name: UiPath
+    careers_url: https://job-boards.greenhouse.io/uipath
+    api: https://boards-api.greenhouse.io/v1/boards/uipath/jobs
+    notes: "RPA and AI automation. Bucharest + global."
+    enabled: true
+
+  - name: Typeform
+    careers_url: https://job-boards.greenhouse.io/typeform
+    api: https://boards-api.greenhouse.io/v1/boards/typeform/jobs
+    notes: "Barcelona. Forms and surveys + AI."
+    enabled: true
+
+  # -- Israel Tech --
+
+  - name: Wix
+    careers_url: https://careers.wix.com
+    scan_method: websearch
+    scan_query: 'site:careers.wix.com "AI" OR "ML" OR "Engineer" OR "Solutions"'
+    notes: "Tel Aviv. Web platform + AI site builder."
+    enabled: true
+
+  - name: Check Point
+    careers_url: https://careers.checkpoint.com
+    scan_method: websearch
+    scan_query: '"check point" careers "AI" OR "ML" OR "Solutions" OR "Architect"'
+    notes: "Tel Aviv. Cybersecurity + AI threat prevention."
+    enabled: true
+
+  - name: Taboola
+    careers_url: https://job-boards.greenhouse.io/taboola
+    api: https://boards-api.greenhouse.io/v1/boards/taboola/jobs
+    notes: "Tel Aviv. Content discovery + AI recommendations."
+    enabled: true
+
+  # -- India Tech (Global Eng Hubs) --
+
+  - name: Razorpay
+    careers_url: https://job-boards.greenhouse.io/razorpay
+    api: https://boards-api.greenhouse.io/v1/boards/razorpay/jobs
+    notes: "Bangalore. Payments + AI fraud detection."
+    enabled: true
+
+  - name: Postman (India)
+    careers_url: https://job-boards.greenhouse.io/postman
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  # -- Horizontal AI Platforms --
+
+  - name: Comet ML
+    careers_url: https://job-boards.greenhouse.io/cometml
+    api: https://boards-api.greenhouse.io/v1/boards/cometml/jobs
+    notes: "ML experiment tracking and model monitoring."
+    enabled: true
+
+  - name: Neptune.ai
+    careers_url: https://jobs.lever.co/neptune-ai
+    notes: "ML metadata store and experiment tracking. Warsaw."
+    enabled: true
+
+  - name: Determined AI (HPE)
+    careers_url: https://careers.hpe.com
+    scan_method: websearch
+    scan_query: '"determined ai" OR "hpe" "ML" OR "training" OR "AI platform"'
+    notes: "HPE-owned. ML training platform."
+    enabled: true
+
+  - name: Labelbox
+    careers_url: https://job-boards.greenhouse.io/labelbox
+    api: https://boards-api.greenhouse.io/v1/boards/labelbox/jobs
+    notes: "Data labeling and annotation for AI."
+    enabled: true
+
+  - name: Humanloop
+    careers_url: https://jobs.ashbyhq.com/humanloop
+    notes: "London. LLM evaluation and prompt management."
+    enabled: true
+
+  - name: Weights & Biases
+    careers_url: https://jobs.lever.co/wandb
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  # -- Vertical AI (Finance, Insurance, Construction) --
+
+  - name: Eigen Technologies
+    careers_url: https://job-boards.greenhouse.io/eigentechnologies
+    api: https://boards-api.greenhouse.io/v1/boards/eigentechnologies/jobs
+    notes: "London. Document AI for financial services."
+    enabled: true
+
+  - name: Featurespace
+    careers_url: https://featurespace.com/careers
+    scan_method: websearch
+    scan_query: '"featurespace" careers "AI" OR "ML" OR "Engineer"'
+    notes: "Cambridge UK. AI fraud prevention."
+    enabled: true
+
+  - name: Procore
+    careers_url: https://job-boards.greenhouse.io/procore
+    api: https://boards-api.greenhouse.io/v1/boards/procore/jobs
+    notes: "Construction management + AI features."
+    enabled: true
+
+  - name: Veeva Systems
+    careers_url: https://careers.veeva.com
+    scan_method: websearch
+    scan_query: 'site:careers.veeva.com "AI" OR "ML" OR "Data" OR "Engineer"'
+    notes: "Life sciences cloud + AI. Remote."
+    enabled: true
+
+  # -- Identity & Trust --
+
+  - name: Persona
+    careers_url: https://job-boards.greenhouse.io/persona
+    api: https://boards-api.greenhouse.io/v1/boards/persona/jobs
+    notes: "Identity verification + AI."
+    enabled: true
+
+  - name: Jumio
+    careers_url: https://job-boards.greenhouse.io/jumio
+    api: https://boards-api.greenhouse.io/v1/boards/jumio/jobs
+    notes: "AI identity verification and eKYC."
+    enabled: true
+
+  - name: Onfido
+    careers_url: https://job-boards.greenhouse.io/onfido
+    api: https://boards-api.greenhouse.io/v1/boards/onfido/jobs
+    notes: "London. AI identity verification. Entrust-acquired."
+    enabled: true
+
+  # -- Networking & Edge --
+
+  - name: Tailscale
+    careers_url: https://job-boards.greenhouse.io/tailscale
+    api: https://boards-api.greenhouse.io/v1/boards/tailscale/jobs
+    notes: "WireGuard-based mesh VPN. Remote."
+    enabled: true
+
+  - name: Zscaler
+    careers_url: https://job-boards.greenhouse.io/zscaler
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Cloudinary
+    careers_url: https://job-boards.greenhouse.io/cloudinary
+    api: https://boards-api.greenhouse.io/v1/boards/cloudinary/jobs
+    notes: "Media management + AI transformations."
+    enabled: true
+
+  - name: Imgix
+    careers_url: https://jobs.ashbyhq.com/imgix
+    notes: "Image optimization and delivery."
+    enabled: true
+
+  # -- Testing & QA --
+
+  - name: BrowserStack
+    careers_url: https://job-boards.greenhouse.io/browserstack
+    api: https://boards-api.greenhouse.io/v1/boards/browserstack/jobs
+    notes: "Testing platform + AI test generation."
+    enabled: true
+
+  - name: Sauce Labs
+    careers_url: https://job-boards.greenhouse.io/saucelabs
+    api: https://boards-api.greenhouse.io/v1/boards/saucelabs/jobs
+    notes: "Automated testing cloud."
+    enabled: true
+
+  - name: Testim (Tricentis)
+    careers_url: https://job-boards.greenhouse.io/testim
+    api: https://boards-api.greenhouse.io/v1/boards/testim/jobs
+    notes: "AI-powered test automation."
+    enabled: true
+
+  # -- Open Source Companies --
+
+  - name: GitPod
+    careers_url: https://jobs.ashbyhq.com/gitpod
+    notes: "Cloud development environments. Remote."
+    enabled: true
+
+  - name: Coder
+    careers_url: https://jobs.ashbyhq.com/coder
+    notes: "Remote development environments. Open-source."
+    enabled: true
+
+  - name: Meilisearch
+    careers_url: https://jobs.lever.co/meilisearch
+    notes: "Paris. Open-source search engine."
+    enabled: true
+
+  - name: MinIO
+    careers_url: https://min.io/careers
+    scan_method: websearch
+    scan_query: '"minio" careers "engineer" OR "solutions" OR "AI"'
+    notes: "Object storage for AI/ML. Open-source."
+    enabled: true
+
+  # -- Blockchain / Web3 AI (opt-in) --
+
+  - name: Worldcoin
+    careers_url: https://job-boards.greenhouse.io/worldcoinorg
+    api: https://boards-api.greenhouse.io/v1/boards/worldcoinorg/jobs
+    notes: "World ID + AI proof-of-personhood. Sam Altman."
+    enabled: false
+
+  # -- Media & Content --
+
+  - name: Reddit
+    careers_url: https://job-boards.greenhouse.io/reddit
+    api: https://boards-api.greenhouse.io/v1/boards/reddit/jobs
+    notes: "Social platform + ML/AI features."
+    enabled: true
+
+  - name: Pinterest
+    careers_url: https://job-boards.greenhouse.io/pinterest
+    api: https://boards-api.greenhouse.io/v1/boards/pinterest/jobs
+    notes: "Visual discovery + ML recommendations."
+    enabled: true
+
+  - name: Snap
+    careers_url: https://job-boards.greenhouse.io/snap
+    api: https://boards-api.greenhouse.io/v1/boards/snap/jobs
+    notes: "Snapchat + AR/AI (My AI assistant)."
+    enabled: true
+
+  - name: The New York Times
+    careers_url: https://nytimes.wd5.myworkdayjobs.com
+    scan_method: websearch
+    scan_query: '"new york times" careers "AI" OR "ML" OR "Data" OR "Engineer"'
+    notes: "Media + AI/ML for recommendations and content."
+    enabled: true
+
+  - name: Substack
+    careers_url: https://jobs.ashbyhq.com/substack
+    notes: "Newsletter platform."
+    enabled: true
+
+  # -- Food & AgTech --
+
+  - name: Toast
+    careers_url: https://job-boards.greenhouse.io/toast
+    api: https://boards-api.greenhouse.io/v1/boards/toast/jobs
+    notes: "Restaurant tech + AI features."
+    enabled: true
+
+  - name: Grubhub (Just Eat Takeaway)
+    careers_url: https://job-boards.greenhouse.io/grubhub
+    api: https://boards-api.greenhouse.io/v1/boards/grubhub/jobs
+    notes: "Food delivery + ML optimization."
+    enabled: true
+
+  # -- Construction & Industrial --
+
+  - name: Built Robotics
+    careers_url: https://jobs.lever.co/builtrobotics
+    notes: "Autonomous construction equipment."
+    enabled: true
+
+  - name: Samsara
+    careers_url: https://job-boards.greenhouse.io/samsara
+    api: https://boards-api.greenhouse.io/v1/boards/samsara/jobs
+    notes: "IoT + AI for physical operations."
+    enabled: true
+
+  # -- Government & Civic Tech --
+
+  - name: Govini
+    careers_url: https://job-boards.greenhouse.io/govini
+    api: https://boards-api.greenhouse.io/v1/boards/govini/jobs
+    notes: "AI analytics for defense and government."
+    enabled: true
+
+  - name: Primer AI
+    careers_url: https://job-boards.greenhouse.io/primerai
+    api: https://boards-api.greenhouse.io/v1/boards/primerai/jobs
+    notes: "NLP for defense and intelligence."
+    enabled: true
+
+  # -- Misc High-Growth Tech --
+
+  - name: Canva (Design)
+    careers_url: https://job-boards.greenhouse.io/canva
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Grammarly
+    careers_url: https://job-boards.greenhouse.io/grammarly
+    api: https://boards-api.greenhouse.io/v1/boards/grammarly/jobs
+    notes: "AI writing assistant. Remote-first."
+    enabled: true
+
+  - name: Webflow
+    careers_url: https://job-boards.greenhouse.io/webflow
+    api: https://boards-api.greenhouse.io/v1/boards/webflow/jobs
+    notes: "No-code web platform + AI features."
+    enabled: true
+
+  - name: Liveblocks
+    careers_url: https://jobs.ashbyhq.com/liveblocks
+    notes: "Real-time collaboration infrastructure."
+    enabled: true
+
+  - name: Convex
+    careers_url: https://jobs.ashbyhq.com/convex
+    notes: "Reactive backend-as-a-service."
+    enabled: true
+
+  - name: Railway
+    careers_url: https://jobs.ashbyhq.com/railway
+    notes: "Cloud deployment platform for developers."
+    enabled: true
+
+  - name: Deno
+    careers_url: https://jobs.ashbyhq.com/deno
+    notes: "JavaScript/TypeScript runtime + Deploy."
+    enabled: true
+
+  - name: Val Town
+    careers_url: https://jobs.ashbyhq.com/valtown
+    notes: "Social programming and serverless functions."
+    enabled: true
+
+  - name: Vercel
+    careers_url: https://job-boards.greenhouse.io/vercel
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Sanity
+    careers_url: https://jobs.ashbyhq.com/sanity
+    notes: "Composable content platform."
+    enabled: true
+
+  - name: Contentful
+    careers_url: https://job-boards.greenhouse.io/contentful
+    api: https://boards-api.greenhouse.io/v1/boards/contentful/jobs
+    notes: "Berlin. Headless CMS + AI content."
+    enabled: true
+
+  - name: Storyblok
+    careers_url: https://jobs.ashbyhq.com/storyblok
+    notes: "Linz/Remote. Headless CMS."
+    enabled: true
+
+  - name: PagerDuty
+    careers_url: https://job-boards.greenhouse.io/pagerduty
+    api: https://boards-api.greenhouse.io/v1/boards/pagerduty/jobs
+    notes: "Incident management + AIOps."
+    enabled: true
+
+  - name: OpsGenie (Atlassian)
+    careers_url: https://jobs.lever.co/atlassian
+    notes: "Already tracked Atlassian above."
+    enabled: false
+
+  - name: FireHydrant
+    careers_url: https://job-boards.greenhouse.io/firehydrant
+    api: https://boards-api.greenhouse.io/v1/boards/firehydrant/jobs
+    notes: "Incident management platform."
+    enabled: true
+
+  - name: Rootly
+    careers_url: https://jobs.ashbyhq.com/rootly
+    notes: "Incident management in Slack."
+    enabled: true
+
+  - name: Vanta
+    careers_url: https://job-boards.greenhouse.io/vanta
+    api: https://boards-api.greenhouse.io/v1/boards/vanta/jobs
+    notes: "Automated compliance (SOC 2, ISO) + AI."
+    enabled: true
+
+  - name: Drata
+    careers_url: https://job-boards.greenhouse.io/drata
+    api: https://boards-api.greenhouse.io/v1/boards/drata/jobs
+    notes: "Compliance automation platform."
+    enabled: true
+
+  - name: Chainguard
+    careers_url: https://job-boards.greenhouse.io/chainguard
+    api: https://boards-api.greenhouse.io/v1/boards/chainguard/jobs
+    notes: "Supply chain security and distroless images."
+    enabled: true
+
+  - name: Teleport
+    careers_url: https://job-boards.greenhouse.io/teleport
+    api: https://boards-api.greenhouse.io/v1/boards/teleport/jobs
+    notes: "Infrastructure access platform."
+    enabled: true
+
+  - name: Cockroach Labs
+    careers_url: https://job-boards.greenhouse.io/cockroachlabs
+    notes: "Already tracked above — duplicate guard."
+    enabled: false
+
+  - name: Materialize
+    careers_url: https://job-boards.greenhouse.io/materialize
+    api: https://boards-api.greenhouse.io/v1/boards/materialize/jobs
+    notes: "Streaming SQL database."
+    enabled: true
+
+  - name: RisingWave
+    careers_url: https://jobs.ashbyhq.com/risingwave
+    notes: "Streaming database (Postgres-compatible)."
+    enabled: true
+
+  - name: Redpanda
+    careers_url: https://jobs.ashbyhq.com/redpanda-data
+    notes: "Kafka-compatible streaming platform."
+    enabled: true
+
+  - name: WarpStream
+    careers_url: https://jobs.ashbyhq.com/warpstream
+    notes: "Confluent-acquired. Kafka-compatible streaming."
+    enabled: true
+
+  - name: Buf
+    careers_url: https://jobs.ashbyhq.com/buf
+    notes: "Protocol buffers tooling and BSR."
+    enabled: true
+
+  - name: Hasura
+    careers_url: https://job-boards.greenhouse.io/hasura
+    api: https://boards-api.greenhouse.io/v1/boards/hasura/jobs
+    notes: "Instant GraphQL APIs + AI connectors."
+    enabled: true
+
+  - name: Prisma
+    careers_url: https://jobs.ashbyhq.com/prisma
+    notes: "Berlin. ORM and data access for Node/TypeScript."
+    enabled: true
+
+  - name: Drizzle
+    careers_url: https://jobs.ashbyhq.com/drizzle
+    notes: "TypeScript ORM. Remote."
+    enabled: true
